@@ -1,0 +1,25 @@
+{
+  "name": "theme-default",
+  "version": "1.0.0",
+  "description": "vuxes component default theme.",
+  "main": "lib/index.css",
+  "scripts": {
+    "dev": "gulp build && gulp watch",
+    "build": "gulp build"
+  },
+  "keywords": [
+    "theme"
+  ],
+  "author": "XES-Team",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-less": "^4.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "postcss-bem-fix": "^2.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "postcss-px2units": "^0.2.0"
+  }
+}
