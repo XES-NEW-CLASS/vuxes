@@ -22,17 +22,17 @@ export default {
   data () {
     return {
       isExpand: false
-    };
+    }
   },
   methods: {
     toggle () {
-      this.isExpand = !this.isExpand;
+      this.isExpand = !this.isExpand
     }
   }
-};
+}
 </script>
 
-<style lang="less" type="text/less">
+<style lang="less">
 .demo-container {
   transition: max-height 0.3s ease;
   overflow: hidden;
@@ -59,6 +59,7 @@ export default {
   font-size: 12px;
   padding: 10px 0;
   background-color: #fafbfc;
+  margin-bottom: 10px;
 }
 
 .docs-demo__code,

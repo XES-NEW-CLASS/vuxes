@@ -63,6 +63,7 @@
     "eslint-plugin-vue": "^6.1.2",
     "fs-extra": "^7.0.1",
     "gh-pages": "^2.2.0",
+    "highlight.js": "^9.18.1",
     "husky": "^4.2.3",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
