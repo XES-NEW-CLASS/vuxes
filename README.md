@@ -1,17 +1,12 @@
 # Vuxes UI
 
-`vuxes` 是一款基于 `Vue.js 2.0` 的前端 UI 组件库，主要用于学而思新课堂项目
-
-<p align="center">
-  <a href="https://github.com/feross/standard">
-    <img src="https://cdn.rawgit.com/feross/standard/master/badge.svg" alt="Standard - JavaScript Style">
-  </a>
-</p>
-<p align="center">
+<p align="left">
 <a href="https://www.npmjs.com/package/vuxes"><img src="https://img.shields.io/badge/npm-0.0.1-brightgreen.svg" alt="npm version"></a>
   <img src="https://img.shields.io/badge/build-passing-brightgreen.svg">
   <a href="https://www.npmjs.com/package/vuxes"><img src="https://img.shields.io/badge/licence-MIT-blue.svg"></a>
 </p>
+
+`vuxes` 是一款基于 `Vue.js 2.0` 的前端 UI 组件库，主要用于学而思新课堂项目
 
 ## 特性
 
@@ -37,7 +32,7 @@ npm install vuxes -S
 
 ```js
 import vuxes from 'vuxes' // 引入组件库
-import 'vuxes/lib/theme/index.css' // 引入样式库
+import 'vuxes/lib/theme-default/index.css' // 引入样式库
 
 Vue.use(vuxes)
 ```
