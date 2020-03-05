@@ -1,32 +1,25 @@
 # Button 按钮
-<!-- {.md} -->
 
----
-<!-- {.md} -->
+----
 
-## 如何使用
-<!-- {.md} -->
+## 基础用法
 
-方式一：<!-- {.md} -->
-通过<!-- {.md} -->`xes-button`标签来引用
+方式一：
+通过 `x-button`标签来引用
+
+<x-button-demo></x-button-demo>
 
 ::: demo
 
 ```html
-<xes-button type="default" :size="16"></xes-button>
-<xes-button type="primary" :size="16"></xes-button>
-<xes-button type="success" :size="16"></xes-button>
+<x-button type="default">默认按钮</x-button>
+<x-button type="primary">主要按钮</x-button>
+<x-button type="success">成功按钮</x-button>
 ```
 
 :::
 
-
-
 ## Attributes
-<!-- {.md} -->
-| 参数   | 说明                                      | 类型    | 可选值         | 默认值 |
-| ------ | ----------------------------------------- | ------- | -------------- | ------ |
-| name   | 图标名称                                  | string  | -              | -      |
-| color  | 图标颜色                                  | string  | -              | -      |
-| size   | 图标大小                                  | number  | -              | -      |
-| symbol | 是否多色（开启将以`svg`标签方式引入图标） | boolean | `true`,`false` | `true` |
+| 参数 | 说明 | 类型   | 可选值                                           | 默认值  |
+| ---- | ---- | ------ | ------------------------------------------------ | ------- |
+| type | 类型 | string | default、primary、success、warning、danger、info | default |

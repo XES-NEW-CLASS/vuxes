@@ -5,6 +5,9 @@ import demoBlock from './components/demo-block.vue'
 import vuxes from '../packages/index'
 import '../lib/theme-default/index.css'
 
+Vue.component('demo-block', demoBlock)
+Vue.use(vuxes)
+
 const Demos = []
 
 function importDemos (r) {
@@ -12,14 +15,12 @@ function importDemos (r) {
     Demos.push(r(key).default)
   })
 }
-
 importDemos(require.context('@/demos', true, /\.vue$/))
 
 Demos.map(component => Vue.component(component.name, component))
 
-Vue.component('demo-block', demoBlock)
-
-Vue.use(vuxes)
+// Promise Catch不报错
+window.addEventListener('unhandledrejection', event => event.preventDefault())
 
 Vue.config.productionTip = false
 

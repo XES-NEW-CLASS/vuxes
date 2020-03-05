@@ -5,9 +5,6 @@
       <sideNav class="nav"></sideNav>
       <router-view class="view"></router-view>
     </div>
-    <!-- <div class="header-nav">
-      右侧
-    </div> -->
   </div>
 </template>
 
@@ -21,7 +18,6 @@ export default {
   components: {
     mainHeader,
     sideNav
-    // mainFooter
   },
   data () {
     return {}

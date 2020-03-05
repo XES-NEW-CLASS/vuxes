@@ -12,16 +12,14 @@ Object.keys(navConf).forEach(header => {
 
 const addComponent = router => {
   router.forEach(route => {
-    if (route.items) {
-      addComponent(route.items)
-      routes = routes.concat(route.items)
+    if (route.children) {
+      addComponent(route.children)
+      routes = routes.concat(route.children)
     } else {
       if (route.name === 'index') {
-        route.component = r =>
-          require.ensure([], () => r(require('../docs/introduce.md')))
+        route.component = () => import('../docs/introduce.md')
       } else {
-        route.component = r =>
-          require.ensure([], () => r(require(`../docs/${route.name}.md`)))
+        route.component = () => import('../docs/' + route.name + '.md')
       }
     }
   })

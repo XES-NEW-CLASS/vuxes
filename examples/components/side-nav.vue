@@ -13,7 +13,7 @@
                        :to="{name: nav.name}">{{nav.desc}}</router-link>
           <p v-else
              class="side-nav-group">{{nav.desc}}</p>
-          <div v-for="item in nav.items"
+          <div v-for="item in nav.children"
                :key="item.name">
             <router-link :to="{name: item.name}"
                          :class="$route.name === item.name ? 'active' : ''"
@@ -38,9 +38,6 @@ export default {
     navConfComp () {
       return Object.keys(navConf)
     }
-  },
-  mounted () {
-    console.log(navConf, this.navConfComp)
   }
 }
 </script>

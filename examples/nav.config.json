@@ -28,7 +28,7 @@
   "组件": [
     {
       "desc": "基础",
-      "items": [
+      "children": [
         {
           "desc": "Button 按钮",
           "name": "button",
@@ -38,7 +38,7 @@
     },
     {
       "desc": "布局",
-      "items": [
+      "children": [
         {
           "desc": "开发中...",
           "name": "",
@@ -48,7 +48,7 @@
     },
     {
       "desc": "导航",
-      "items": [
+      "children": [
         {
           "desc": "开发中...",
           "name": "",
@@ -58,7 +58,7 @@
     },
     {
       "desc": "表单",
-      "items": [
+      "children": [
         {
           "desc": "开发中...",
           "name": "",
@@ -68,7 +68,7 @@
     },
     {
       "desc": "视图",
-      "items": [
+      "children": [
         {
           "desc": "开发中...",
           "name": "",
@@ -78,7 +78,7 @@
     },
     {
       "desc": "图表",
-      "items": [
+      "children": [
         {
           "desc": "开发中...",
           "name": "",

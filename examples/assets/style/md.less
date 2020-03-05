@@ -1,86 +1,38 @@
-@--active-color:#2150db;
-@--title-color:#515561;
-@--meta-title-color:#515561;
-@--content-color:#5e6d82;
-
-section.view {
+section {
+  color: #3f536e;
   font-size: 14px;
-  a.md {
-    text-decoration: underline;
-  }
-  .md {
-    color: #515561;
-  }
-  .demo-block {
+  .demo-block{
     padding: 32px;
     border: 1px solid #e2ecf4;
     border-radius: 4px 4px 0 0;
     background-color: #fff;
     margin-top: 16px;
-    .demo-card {
-      margin-right: 50px;
-      margin-bottom: 20px;
-      display: inline-block;
-      vertical-align: bottom;
-    }
   }
-  hr.md {
+  hr {
     margin: 1.2em 0;
     border: 0;
     border-bottom: 1px solid #C5D9E8;
-    &+ul {
-      margin: 16px 0;
-      padding-left: 24px;
-      list-style: disc;
-      color: #3f536e;
-      li {
-        line-height: 1.8;
-      }
-    }
   }
-  p.md {
+  p {
     padding: 0;
     line-height: 1.7;
     color: #3f536e;
     font-size: 14px;
   }
-  h1.md {
+  h1 {
     font-size: 24px;
   }
-  h1.md,
-  h2.md,
-  h3.md,
-  h4.md,
-  h5.md {
+  h1,h2,h3,h4,h5{
     margin: 16px 0;
     line-height: 1.5;
-    &+ul {
-      margin: 16px 0;
-      padding-left: 24px;
-      list-style: disc;
-      color: #3f536e;
-      li {
-        line-height: 1.8;
-      }
-    }
   }
-  h2.md {
+  h2 {
     font-size: 18px;
   }
-  .task-list {
+  ul {
     margin: 16px 0;
     padding-left: 24px;
     list-style: disc;
-    color: #3f536e;
-    li {
-      line-height: 1.8;
-    }
-  }
-  ul.md {
-    margin: 16px 0;
-    padding-left: 24px;
-    list-style: disc;
-    color: #3f536e;
     li {
       line-height: 1.8;
     }
@@ -109,25 +61,47 @@ section.view {
   code.code_inline {
     padding: 0 .5em;
   }
+  img {
+    vertical-align: middle;
+  }
+  p+p {
+    margin-top: 8px;
+  }
+  a {
+    color: #6190e8;
+  }
+
   table.table {
-    display: block;
+    border-collapse: collapse;
     width: 100%;
     background-color: #fff;
-    color: #5e6d82;
     font-size: 14px;
-    border-collapse: collapse;
-    overflow: auto;
-    margin-bottom: 50px;
-    th {
-      border-top: 1px solid #f3f7fa;
-      background-color: #FAFBFC;
-      border-bottom: 1px solid #f3f7fa;
-      padding: 10px 8px;
+    margin-bottom: 45px;
+    line-height: 1.5em;
+
+    strong {
+      font-weight: normal;
     }
+
+    td, th {
+      border-bottom: 1px solid #dcdfe6;
+      padding: 15px;
+      max-width: 250px;
+    }
+
+    th {
+      text-align: left;
+      white-space: nowrap;
+      color: #909399;
+      font-weight: normal;
+    }
+
     td {
-      border-top: 1px solid #f3f7fa;
-      border-bottom: 1px solid #f3f7fa;
-      padding: 10px 8px;
+      color: #606266;
+    }
+
+    th:first-child, td:first-child {
+      padding-left: 10px;
     }
   }
 }
