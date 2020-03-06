@@ -35,7 +35,6 @@
     "release": "standard-version",
     "dev": "npm run build:entry && vue-cli-service serve",
     "dev:style": "gulp --gulpfile packages/theme-default/gulpfile.js",
-
     "test:jest": "vue-cli-service test:unit --watchAll",
     "test:cov": "vue-cli-service test:unit --coverage"
   },
@@ -67,6 +66,7 @@
     "eslint-plugin-vue": "^6.1.2",
     "fs-extra": "^7.0.1",
     "gh-pages": "^2.2.0",
+    "gulp": "^4.0.2",
     "highlight.js": "^9.18.1",
     "husky": "^4.2.3",
     "jest-transform-stub": "^2.0.0",
@@ -109,6 +109,8 @@
     ]
   },
   "jest": {
-    "snapshotSerializers": ["jest-serializer-vue"]
+    "snapshotSerializers": [
+      "jest-serializer-vue"
+    ]
   }
 }
