@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1583384746976" clover="3.2.0">
+  <project timestamp="1583384746976" name="All files">
+    <metrics statements="65" coveredstatements="28" conditionals="33" coveredconditionals="13" methods="21" coveredmethods="8" elements="119" coveredelements="49" complexity="0" loc="65" ncloc="65" packages="5" files="7" classes="7"/>
+    <package name="packages">
+      <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+      <file name="index.js" path="D:\zhangxiaoyu\vuxes\packages\index.js">
+        <metrics statements="6" coveredstatements="6" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="14" count="1" type="cond" truecount="3" falsecount="0"/>
+      </file>
+    </package>
+    <package name="packages.button">
+      <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+      <file name="button.vue" path="D:\zhangxiaoyu\vuxes\packages\button\button.vue">
+        <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+      <file name="index.js" path="D:\zhangxiaoyu\vuxes\packages\button\index.js">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="packages.mixins">
+      <metrics statements="18" coveredstatements="4" conditionals="14" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="bem.js" path="D:\zhangxiaoyu\vuxes\packages\mixins\bem.js">
+        <metrics statements="18" coveredstatements="4" conditionals="14" coveredconditionals="0" methods="5" coveredmethods="0"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="13" count="1" type="cond" truecount="0" falsecount="2"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="20" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="28" count="0" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="37" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+    </package>
+    <package name="packages.theme-default">
+      <metrics statements="14" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <file name="gulpfile.js" path="D:\zhangxiaoyu\vuxes\packages\theme-default\gulpfile.js">
+        <metrics statements="14" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+        <line num="2" count="0" type="stmt"/>
+        <line num="3" count="0" type="stmt"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="5" count="0" type="stmt"/>
+        <line num="6" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="46" count="0" type="stmt"/>
+        <line num="50" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="packages.utils">
+      <metrics statements="24" coveredstatements="16" conditionals="16" coveredconditionals="10" methods="9" coveredmethods="6"/>
+      <file name="create-basic.js" path="D:\zhangxiaoyu\vuxes\packages\utils\create-basic.js">
+        <metrics statements="17" coveredstatements="14" conditionals="12" coveredconditionals="10" methods="5" coveredmethods="4"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="26" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="37" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="38" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="40" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="42" count="1" type="cond" truecount="2" falsecount="0"/>
+        <line num="43" count="1" type="stmt"/>
+      </file>
+      <file name="helper.js" path="D:\zhangxiaoyu\vuxes\packages\utils\helper.js">
+        <metrics statements="7" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="10" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+      </file>
+    </package>
+  </project>
+</coverage>
