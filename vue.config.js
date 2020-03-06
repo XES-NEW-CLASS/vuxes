@@ -2,13 +2,12 @@ const path = require('path')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
+// const md = require('markdown-it')()
 const MarkdownItContainer = require('markdown-it-container')
-const MarkdownItCheckBox = require('markdown-it-task-checkbox')
-const MarkdownItDec = require('markdown-it-decorate')
 const utils = require('./build/utils')
 
 const vueMarkdown = {
-  raw: true,
+  // raw: true,
   preprocess: (MarkdownIt, source) => {
     MarkdownIt.renderer.rules.table_open = function () {
       return '<table class="table">'
@@ -39,14 +38,7 @@ const vueMarkdown = {
           return '</div></demo-block>\n'
         }
       }
-    ],
-    [
-      MarkdownItCheckBox,
-      {
-        disabled: true
-      }
-    ],
-    [MarkdownItDec]
+    ]
   ]
 }
 
