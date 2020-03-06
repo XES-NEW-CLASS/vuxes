@@ -34,3 +34,33 @@ export function camelize (str) {
 export function isDef (value) {
   return value !== undefined && value !== null
 }
+
+/**
+ * 生成随机id
+ * @returns {number}
+ */
+export const generateId = function () {
+  return Math.floor(Math.random() * 10000)
+}
+
+/**
+ * 合并对象
+ * @param target
+ * @returns {*}
+ */
+export const merge = function (target) {
+  for (let i = 1, j = arguments.length; i < j; i++) {
+    const source = arguments[i] || {}
+    for (const prop in source) {
+      // eslint-disable-next-line
+      if (source.hasOwnProperty(prop)) {
+        const value = source[prop]
+        if (value !== undefined) {
+          target[prop] = value
+        }
+      }
+    }
+  }
+
+  return target
+}

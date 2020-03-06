@@ -85,6 +85,16 @@
           "path": ""
         }
       ]
+    },
+    {
+      "desc": "其他",
+      "children": [
+        {
+          "desc": "Popover",
+          "name": "popover",
+          "path": "/popover"
+        }
+      ]
     }
   ],
   "开发指南": [

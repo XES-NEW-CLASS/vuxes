@@ -1,9 +1,11 @@
 /* eslint-disable */
 // This file is auto gererated by build/build-entry.js
 import Button from './button'
+import Popover from './popover'
 const version = '0.0.1'
 const components = [
-  Button
+  Button,
+  Popover
 ]
 const install = Vue => {
   components.forEach(Component => {
@@ -17,7 +19,8 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
-  Button
+  Button,
+  Popover
 }
 export default {
   install,
