@@ -6,7 +6,7 @@
   <a href="https://www.npmjs.com/package/vuxes"><img src="https://img.shields.io/badge/licence-MIT-blue.svg"></a>
 </p>
 
-`vuxes` 是一款基于 `Vue.js 2.0` 的前端 UI 组件库，主要用于学而思新课堂项目
+`vuxes` 是一款基于 `Vue.js` 的前端 UI 组件库，主要服务于学而思新课堂项目
 
 ## 特性
 
@@ -26,6 +26,12 @@ yarn add vuxes
 
 ```bash
 npm install vuxes -S
+```
+
+- 使用 `<script>` 全局引用
+
+```html
+<script type="text/javascript" src="vuxes.umd.min.js"></script>
 ```
 
 ## 使用

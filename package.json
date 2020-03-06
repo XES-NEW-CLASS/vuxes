@@ -26,7 +26,7 @@
     "lint": "vue-cli-service lint --fix",
     "clean": "rimraf lib && rimraf packages/*/lib",
     "build:entry": "node build/build-entry.js ",
-    "lib": "vue-cli-service build --target lib --name vuxes --dest lib packages/index.js",
+    "lib": "vue-cli-service build --target lib --name index --dest lib packages/index.js",
     "build:style": "gulp build --gulpfile ./packages/theme-default/gulpfile.js && cp-cli packages/theme-default/lib lib/theme-default",
     "build:lib": "node build/build-lib.js ",
     "build:docs": "vue-cli-service build",
