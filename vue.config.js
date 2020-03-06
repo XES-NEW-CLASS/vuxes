@@ -7,7 +7,7 @@ const MarkdownItContainer = require('markdown-it-container')
 const utils = require('./build/utils')
 
 const vueMarkdown = {
-  // raw: true,
+  raw: true,
   preprocess: (MarkdownIt, source) => {
     MarkdownIt.renderer.rules.table_open = function () {
       return '<table class="table">'
@@ -24,21 +24,19 @@ const vueMarkdown = {
     }
     return source
   },
-  use: [
-    [
-      MarkdownItContainer,
-      'demo',
-      {
-        validate: params => params.trim().match(/^demo\s*(.*)$/),
-        render: function (tokens, idx) {
-          if (tokens[idx].nesting === 1) {
-            return `<demo-block>
+  use: [[
+    MarkdownItContainer, 'demo', {
+      validate: params => params.trim().match(/^demo\s*(.*)$/),
+      render: function (tokens, idx) {
+        if (tokens[idx].nesting === 1) {
+          return `<demo-block>
                         <div slot="highlight">`
-          }
-          return '</div></demo-block>\n'
         }
+        return '</div></demo-block>\n'
       }
-    ]
+    }],
+  [MarkdownItContainer, 'tip'],
+  [MarkdownItContainer, 'warning']
   ]
 }
 

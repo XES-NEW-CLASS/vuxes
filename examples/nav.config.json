@@ -101,7 +101,7 @@
     {
       "name": "git-standard",
       "path": "/git-standard",
-      "desc": "Git提交规范"
+      "desc": "Git规范"
     },
     {
       "name": "bem",
