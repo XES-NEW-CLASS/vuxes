@@ -11,5 +11,4 @@
 export default {
   name: 'x-button-demo'
 }
-
 </script>

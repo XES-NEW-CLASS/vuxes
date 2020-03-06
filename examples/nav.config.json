@@ -102,6 +102,21 @@
       "name": "contribute",
       "path": "/contribute",
       "desc": "如何开发"
+    },
+    {
+      "name": "file-structure",
+      "path": "/file-structure",
+      "desc": "项目结构"
+    },
+    {
+      "name": "git-standard",
+      "path": "/git-standard",
+      "desc": "Git提交规范"
+    },
+    {
+      "name": "bem",
+      "path": "/bem",
+      "desc": "Bem规范"
     }
   ]
 }

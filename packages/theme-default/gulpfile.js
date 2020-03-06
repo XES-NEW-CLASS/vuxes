@@ -28,7 +28,7 @@ function compileCssToPx (done) {
         tobem(bemConfig),
         presetenv(),
         pxtounits({
-          divisor: 2,
+          divisor: 1,
           targetUnits: 'px'
         })
       ])
