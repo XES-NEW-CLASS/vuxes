@@ -5,6 +5,7 @@ const instances = [] // 多个创建
 const ToastConstructor = Vue.extend(Toast)
 
 const Message = options => {
+  if (Vue.prototype.$isServer) return
   options = options || {} // 默认是个对象
   if (typeof options === 'string') {
     options = {
@@ -13,7 +14,6 @@ const Message = options => {
   }
   // 实例化message.vue
   const instance = new ToastConstructor({
-    name: 'x-message',
     data: options
   }).$mount()
   // 添加到body中

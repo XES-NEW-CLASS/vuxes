@@ -63,7 +63,7 @@ export default {
       if (this.duration <= 0) return
       this.clearTimer()
       this.timer = setTimeout(() => {
-        this.visible = false
+        // this.visible = false
       }, this.duration)
     },
     // 清除时间
