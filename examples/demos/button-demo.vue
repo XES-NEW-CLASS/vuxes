@@ -1,4 +1,4 @@
-<template functional>
+<template>
   <div class="demo-block">
     <x-button>默认按钮</x-button>
     <x-button type="primary">主要按钮</x-button>
