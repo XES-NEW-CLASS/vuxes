@@ -4,11 +4,9 @@
          :style="positionStyle"
          v-show="visible">
       <!-- iocn图标 -->
-      <i :class="iconStyle" v-if="iconClass != ''"></i>
+      <i :class="`x-icon-${type}`" v-if="isIconShow"></i>
       <!-- 渲染文案 -->
-      <solt>
-        <p>{{ message }}</p>
-      </solt>
+      <p>{{ message }}</p>
     </div>
   </transition>
 </template>
@@ -22,10 +20,11 @@ export default {
       type: 'info', // type类型
       verticalOffset: 20, // 默认top值
       visible: false, // 可见状态
-      iconClass: this.type, // icon样式 根据状态判断是否展示icon 为空不展示
       message: '', // 提示文案
       duration: 2000, // 展示时长
-      timer: null
+      timer: null,
+      iconType: ['info', 'error', 'success', 'warning'], // icon类型
+      isIconShow: true // 是否展示icon
     }
   },
   computed: {
@@ -46,11 +45,6 @@ export default {
       return {
         top: `${verticalOffset}px`
       }
-    },
-    // icon样式
-    iconStyle () {
-      const { iconClass, preClass } = this
-      return !iconClass ? `${preClass}-icon x-icon-${iconClass}` : ''
     }
   },
   mounted () {
@@ -63,7 +57,7 @@ export default {
       if (this.duration <= 0) return
       this.clearTimer()
       this.timer = setTimeout(() => {
-        // this.visible = false
+        this.visible = false
       }, this.duration)
     },
     // 清除时间

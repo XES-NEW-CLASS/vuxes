@@ -4,6 +4,7 @@ import router from './router'
 import demoBlock from './components/demo-block.vue'
 import vuxes from '../packages/index'
 import '../lib/theme-default/index.css'
+import '../packages/theme-default/src/index.less'
 
 Vue.component('demo-block', demoBlock)
 Vue.use(vuxes)

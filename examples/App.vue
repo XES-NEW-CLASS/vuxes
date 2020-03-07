@@ -9,17 +9,7 @@
 
 <script>
 export default {
-  name: 'app',
-  mounted () {
-    // eslint-disable-next-line no-unused-vars
-    var _this = this
-    setTimeout(() => {
-      _this.$message('哈哈哈')
-      setTimeout(() => {
-        _this.$message('hehehe')
-      }, 1000)
-    }, 3000)
-  }
+  name: 'app'
 }
 </script>
 

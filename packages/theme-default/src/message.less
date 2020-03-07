@@ -1,5 +1,30 @@
+@import "common/var";
+
 .x-message{
-  width: 200px;
-  height: 20px;
-  background: red;
+  width: 300px;
+  height: 50px;
+  line-height: 50px;
+  box-sizing: border-box;
+  background-color: rgba(@--color-black,0.7);
+  border-radius: 100px;
+  color:#fff;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  transform: translateX(-50%);
+  transition: opacity 0.3s, transform .4s, top 0.4s;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.x-message-success{
+  background-color:(@--color-success);
+}
+.x-message-error{
+  background-color:(@--color-danger);
+}
+.x-message-warning{
+  background-color:(@--color-warning);
 }
