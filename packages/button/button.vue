@@ -25,6 +25,9 @@ export default create({
       type: String,
       default: 'default'
     }
+  },
+  created () {
+
   }
 })
 </script>

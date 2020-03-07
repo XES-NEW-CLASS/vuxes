@@ -31,6 +31,8 @@ const components = [
 const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
+
+    Vue.prototype.$message = Message
   })
 };
 /* istanbul ignore if */

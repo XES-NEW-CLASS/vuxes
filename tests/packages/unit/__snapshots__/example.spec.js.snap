@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`测试 App.vue 期望app.vue文件中存在app元素 1`] = `
+<div
+  id="app"
+>
+  <div>
+    <p>
+      学而思新课堂辅导端 UI 组件库
+    </p>
+     
+    <router-view-stub
+      name="default"
+    />
+  </div>
+</div>
+`;

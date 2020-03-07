@@ -11,7 +11,12 @@
       </div>
     </div>
     <span class="docs-trans docs-demo__triangle"
-          @click="toggle">{{isExpand ? '隐藏代码' : '显示代码'}}</span>
+          :class="{'hover': hovering}"
+          @mouseenter="hovering = true"
+          @mouseleave="hovering = false"
+          @click="toggle">
+      {{isExpand ? '隐藏代码' : '显示代码'}}
+    </span>
   </div>
 </template>
 
@@ -21,18 +26,27 @@ import Vue from 'vue'
 export default {
   data () {
     return {
-      isExpand: false
-    };
+      isExpand: false,
+      hovering: false
+    }
+  },
+  computed: {
+    iconClass () {
+      return this.isExpand ? 'docs-trans-caret-top' : 'docs-trans-caret-bottom';
+    },
   },
   methods: {
     toggle () {
-      this.isExpand = !this.isExpand;
+      this.isExpand = !this.isExpand
     }
   }
-};
+}
 </script>
 
-<style lang="less" type="text/less">
+<style lang="less">
+.demo-block {
+}
+
 .demo-container {
   transition: max-height 0.3s ease;
   overflow: hidden;
@@ -52,13 +66,29 @@ export default {
   }
 }
 .docs-trans {
-  width: 100%;
-  text-align: center;
   display: inline-block;
-  color: #c5d9e8;
+  width: 100%;
+  height: 44px;
+  line-height: 44px;
   font-size: 12px;
-  padding: 10px 0;
-  background-color: #fafbfc;
+  border-top: 1px solid #eaeefb;
+  box-sizing: border-box;
+  background-color: #fff;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  text-align: center;
+  margin-top: -1px;
+  color: #d3dce6;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s;
+
+  &.hover {
+    color: #409eff;
+    background-color: #f9fafc;
+    box-shadow: 0 0 8px 0 rgba(232, 237, 250, 0.6),
+      0 2px 4px 0 rgba(232, 237, 250, 0.5);
+  }
 }
 
 .docs-demo__code,

@@ -20,21 +20,23 @@
     "packages"
   ],
   "scripts": {
-    "init": "# 项目初始化(第一次调用) \n\t npm install commitizen -g && commitizen init cz-conventional-changelog --save-dev --save-exact && npm run bootstrap",
-    "bootstrap": "# 安装依赖 \n\t npm install && cd ./packages/theme-default && npm install",
-    "dev": "npm run build:entry && vue-cli-service serve",
+    "cli": "./build/cli.sh",
+    "init": "npm install commitizen -g && commitizen init cz-conventional-changelog --save-dev --save-exact && npm run bootstrap",
+    "bootstrap": "npm install && cd ./packages/theme-default && npm install",
     "lint": "vue-cli-service lint --fix",
-    "lib": "# 构建库 \n\t vue-cli-service build --target lib --name vuxes --dest lib packages/index.js",
-    "clean": "# 清空库文件 \n\t rimraf lib && rimraf packages/*/lib",
-    "dev:style": "# 实时编译css \n\t gulp --gulpfile packages/theme-default/gulpfile.js",
-    "build:docs": "# 构建文档 \n\t vue-cli-service build",
-    "build:entry": "# 创建组件入口文件 \n\t node build/build-entry.js ",
-    "build:lib": "# 发布准备 \n\t node build/build-lib.js ",
-    "build:style": "# 构建样式文件 \n\t gulp build --gulpfile ./packages/theme-default/gulpfile.js && cp-cli packages/theme-default/lib lib/theme-default",
-    "publish:docs": "# 发布文档 \n\t node build/publish-docs.js",
-    "deploy": "# 发布组件库 \n\t sh build/release.sh",
+    "clean": "rimraf lib && rimraf packages/*/lib",
+    "build:entry": "node build/build-entry.js ",
+    "lib": "vue-cli-service build --target lib --name index --dest lib packages/index.js",
+    "build:style": "gulp build --gulpfile ./packages/theme-default/gulpfile.js && cp-cli packages/theme-default/lib lib/theme-default",
+    "build:lib": "node build/build-lib.js ",
+    "build:docs": "vue-cli-service build",
+    "publish:lib": "sh build/release.sh",
+    "publish:docs": "node build/publish-docs.js",
     "release": "standard-version",
-    "test:unit": "vue-cli-service test:unit"
+    "dev": "npm run build:entry && vue-cli-service serve",
+    "dev:style": "gulp --gulpfile packages/theme-default/gulpfile.js",
+    "test:jest": "vue-cli-service test:unit --watchAll",
+    "test:cov": "vue-cli-service test:unit --coverage"
   },
   "dependencies": {
     "core-js": "^3.6.4",
@@ -51,6 +53,7 @@
     "@vue/eslint-config-standard": "^5.1.0",
     "@vue/test-utils": "1.0.0-beta.31",
     "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
     "babel-plugin-component": "^1.1.1",
     "commitizen": "^4.0.3",
     "cp-cli": "^2.0.0",
@@ -63,17 +66,21 @@
     "eslint-plugin-vue": "^6.1.2",
     "fs-extra": "^7.0.1",
     "gh-pages": "^2.2.0",
+    "gulp": "^4.0.2",
+    "highlight.js": "^9.18.1",
     "husky": "^4.2.3",
+    "jest-transform-stub": "^2.0.0",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "lint-staged": "^8.2.1",
+    "markdown-it": "^10.0.0",
     "markdown-it-container": "^2.0.0",
-    "markdown-it-decorate": "^1.2.2",
-    "markdown-it-task-checkbox": "^1.0.6",
     "shelljs": "^0.8.3",
     "signale": "^1.4.0",
+    "sinon": "^9.0.0",
     "standard-version": "^7.1.0",
     "uppercamelcase": "^3.0.0",
+    "vue-jest": "^3.0.5",
     "vue-markdown-loader": "^2.4.1",
     "vue-template-compiler": "^2.6.11"
   },
@@ -98,6 +105,11 @@
     "*.vue": [
       "vue-cli-service lint",
       "git add"
+    ]
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "jest-serializer-vue"
     ]
   }
 }

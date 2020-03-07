@@ -47,6 +47,29 @@
 @--font-weight-bold: 600;
 @--font-line-height-primary: 24px;
 
+/* Transition
+-------------------------- */
+@--all-transition: all .3s cubic-bezier(.645,.045,.355,1);
+@--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+@--fade-linear-transition: opacity 200ms linear;
+@--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+@--border-transition-base: border-color .2s cubic-bezier(.645,.045,.355,1);
+@--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1);
+
+/* z-index
+-------------------------- */
+@--index-normal: 1;
+@--index-top: 1000;
+@--index-popper: 2000;
+
+/* box-shadow 
+-------------------------- */
+@--box-shadow-base: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .04);
+// boxShadow|1|Shadow|1
+@--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, .12), 0 0 6px rgba(0, 0, 0, .12);
+/// boxShadow|1|Shadow|1
+@--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
 /* Button
 -------------------------- */
 @--button-radius-base: 32px;
@@ -54,3 +77,23 @@
 /* cls prefix
 -------------------------- */
 @css-prefix: 'x-';
+
+/* Popover
+-------------------------- */
+@--popover-background-color: @--color-white;
+@--popover-font-size: @--font-size-base;
+@--popover-border-color: @--border-color-lighter;
+@--popover-arrow-size: 6px;
+@--popover-padding: 12px;
+@--popover-padding-large: 18px 20px;
+@--popover-title-font-size: 16px;
+@--popover-title-font-color: @--color-text-primary;
+
+/* Tooltip 
+-------------------------- */
+@--tooltip-fill: @--color-text-primary;
+@--tooltip-color: @--color-white;
+@--tooltip-font-size: 12px;
+@--tooltip-border-color: @--color-text-primary;
+@--tooltip-arrow-size: 6px;
+@--tooltip-padding: 10px;

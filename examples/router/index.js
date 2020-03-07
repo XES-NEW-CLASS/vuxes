@@ -1,23 +1,32 @@
 import Vue from 'vue'
-import VueRouter from 'vue-router'
-import ButtonDemo from '@/components/button-demo'
+import Router from 'vue-router'
+import navConf from '@/nav.config.json'
 
-Vue.use(VueRouter)
+Vue.use(Router)
 
-const routes = [
-  {
-    path: '/',
-    redirect: '/button-demo'
-  },
-  {
-    path: '/button-demo',
-    name: 'ButtonDemo',
-    component: ButtonDemo
-  }
-]
+let routes = []
 
-const router = new VueRouter({
-  routes
+Object.keys(navConf).forEach(header => {
+  routes = routes.concat(navConf[header])
 })
 
-export default router
+const addComponent = router => {
+  router.forEach(route => {
+    if (route.children) {
+      addComponent(route.children)
+      routes = routes.concat(route.children)
+    } else {
+      if (route.name === 'index') {
+        route.component = () => import('../docs/introduce.md')
+      } else {
+        route.component = () => import('../docs/' + route.name + '.md')
+      }
+    }
+  })
+}
+addComponent(routes)
+
+const availableRoutes = routes.filter(item => item.path)
+export default new Router({
+  routes: availableRoutes
+})

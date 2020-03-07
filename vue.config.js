@@ -2,9 +2,8 @@ const path = require('path')
 function resolve (dir) {
   return path.join(__dirname, dir)
 }
+// const md = require('markdown-it')()
 const MarkdownItContainer = require('markdown-it-container')
-const MarkdownItCheckBox = require('markdown-it-task-checkbox')
-const MarkdownItDec = require('markdown-it-decorate')
 const utils = require('./build/utils')
 
 const vueMarkdown = {
@@ -25,32 +24,24 @@ const vueMarkdown = {
     }
     return source
   },
-  use: [
-    [
-      MarkdownItContainer,
-      'demo',
-      {
-        validate: params => params.trim().match(/^demo\s*(.*)$/),
-        render: function (tokens, idx) {
-          if (tokens[idx].nesting === 1) {
-            return `<demo-block>
+  use: [[
+    MarkdownItContainer, 'demo', {
+      validate: params => params.trim().match(/^demo\s*(.*)$/),
+      render: function (tokens, idx) {
+        if (tokens[idx].nesting === 1) {
+          return `<demo-block>
                         <div slot="highlight">`
-          }
-          return '</div></demo-block>\n'
         }
+        return '</div></demo-block>\n'
       }
-    ],
-    [
-      MarkdownItCheckBox,
-      {
-        disabled: true
-      }
-    ],
-    [MarkdownItDec]
+    }],
+  [MarkdownItContainer, 'tip'],
+  [MarkdownItContainer, 'warning']
   ]
 }
 
 module.exports = {
+  outputDir: 'docs',
   publicPath: './',
   productionSourceMap: false,
 

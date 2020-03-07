@@ -1,5 +1,5 @@
 <template>
-  <transition name="x-message-fade">
+  <transition name="x-message-fade" @after-leave="close">
     <div :class="mainClass"
          :style="positionStyle"
          v-show="visible">
@@ -11,7 +11,6 @@
   </transition>
 </template>
 <script>
-
 export default {
   name: 'message',
   data () {
@@ -57,22 +56,20 @@ export default {
       if (this.duration <= 0) return
       this.clearTimer()
       this.timer = setTimeout(() => {
-        this.visible = false
+        this.close()
       }, this.duration)
     },
     // 清除时间
     clearTimer () {
       clearTimeout(this.timer)
-    }
-  },
-  watch: {
-    visible (val) {
-      if (!val) {
-        // $destroy只是完全销毁一个实例
-        this.$destroy(true)
-        // 移除当前节点
-        this.$el.parentNode.removeChild(this.$el)
-      }
+    },
+    // 关闭
+    close () {
+      // $destroy只是完全销毁一个实例
+      this.$destroy(true)
+      // 移除当前节点
+      this.$el.parentNode.removeChild(this.$el)
+      // this.onClose(this)
     }
   }
 }
