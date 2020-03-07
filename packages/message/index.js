@@ -15,10 +15,8 @@ const Message = options => {
   const instance = new ToastConstructor({
     name: 'x-message',
     data: options
-  })
-  instance.$slots.default = [instance.message]
-  // 手动挂载
-  instance.$mount()
+  }).$mount()
+  // 添加到body中
   document.body.appendChild(instance.$el)
   // 计算定位高度
   let verticalOffset = options.verticalOffset || 20
