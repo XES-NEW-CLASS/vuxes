@@ -1,7 +1,5 @@
 <template>
-  <button class="x-btn"
-          :class="{[`x-btn-${type}`]: true}"
-          type="button">
+  <button class="x-btn" :class="{ [`x-btn-${type}`]: true }" type="button">
     <slot></slot>
   </button>
 </template>
@@ -15,7 +13,14 @@ export default create({
   props: {
     type: {
       validator (value) {
-        return oneOf(value, ['default', 'primary', 'info', 'success', 'warning', 'danger'])
+        return oneOf(value, [
+          'default',
+          'primary',
+          'info',
+          'success',
+          'warning',
+          'danger'
+        ])
       },
       type: String,
       default: 'default'
