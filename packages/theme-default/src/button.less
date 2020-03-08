@@ -1,5 +1,5 @@
-@import "common/var";
-@btn-prefix-cls: ~"@{css-prefix}button";
+@import 'common/var';
+@btn-prefix-cls: ~'@{css-prefix}button';
 
 .@{btn-prefix-cls} {
   min-width: 60px;
@@ -12,6 +12,7 @@
   outline: none;
   border: 1px solid transparent;
   padding: 0 10px;
+  cursor: pointer;
 
   &:active,
   &:focus {
@@ -28,6 +29,7 @@
       background-color: rgba(@--color-primary, 0.3);
     }
   }
+
   &--primary {
     color: #fff;
     background-color: @--color-primary;
@@ -49,7 +51,8 @@
       background-color: average(@--color-info, #ccc);
     }
   }
-   &--success {
+
+  &--success {
     color: #fff;
     background-color: @--color-success;
 
