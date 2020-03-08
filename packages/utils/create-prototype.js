@@ -1,4 +1,6 @@
 import Vue from 'vue'
+import bem from '../mixins/bem'
+import config from './config'
 
 /**
  * 將組件编译后追加至元素中，给组件添加remove方法
@@ -8,7 +10,9 @@ import Vue from 'vue'
  * @returns
  */
 export default function (component, props, el) {
-  component.name = 'x-' + component.name
+  component.name = config.prefix + component.name
+  component.mixins = component.mixins || []
+  component.mixins.push(bem)
 
   const instance = new Vue({
     render: h => h(component, { props })

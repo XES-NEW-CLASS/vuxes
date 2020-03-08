@@ -62,4 +62,26 @@
       background-color: average(@--color-success, #ccc);
     }
   }
+
+  &--warning {
+    color: #fff;
+    background-color: @--color-warning;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: average(@--color-warning, #ccc);
+    }
+  }
+
+  &--danger {
+    color: #fff;
+    background-color: @--color-danger;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: average(@--color-danger, #ccc);
+    }
+  }
 }

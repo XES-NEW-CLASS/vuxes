@@ -3,8 +3,9 @@ import App from './App.vue'
 import router from './router'
 import demoBlock from './components/demo-block.vue'
 import vuxes from '../packages/index'
-// import '../lib/theme-default/index.css'
 import '../packages/theme-default/src/index.less'
+// import vuxes from '../lib/index.common'
+// import '../lib/theme-default/index.css'
 
 Vue.component('demo-block', demoBlock)
 Vue.use(vuxes)
