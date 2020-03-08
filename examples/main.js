@@ -18,6 +18,7 @@ function importDemos (r) {
 }
 importDemos(require.context('@/demos', true, /\.vue$/))
 
+console.log('main.js: ', Demos)
 Demos.map(component => Vue.component(component.name, component))
 
 // Promise Catch不报错

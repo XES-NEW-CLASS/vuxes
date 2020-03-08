@@ -93,8 +93,10 @@ export default create({
     },
     doShow () {
       this.showPopper = true
+      console.log('doShow', this.showPopper)
     },
     doClose () {
+      console.log('doClose')
       this.showPopper = false
     },
     handleFocus () {
@@ -173,6 +175,7 @@ export default create({
       if (this.disabled) {
         return
       }
+      console.log('showPopper', val)
       val ? this.$emit('show') : this.$emit('hide')
     }
   },

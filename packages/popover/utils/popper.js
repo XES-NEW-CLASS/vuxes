@@ -1040,6 +1040,7 @@
      */
     function getOffsetParent(element) {
         // NOTE: 1 DOM access here
+        // offsetParent 返回一个指向最近的包含该元素的定位元素或者最近的 table,td,th,body元素。
         var offsetParent = element.offsetParent;
         return offsetParent === root.document.body || !offsetParent ? root.document.documentElement : offsetParent;
     }
