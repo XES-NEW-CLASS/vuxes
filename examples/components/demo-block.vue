@@ -10,7 +10,6 @@
         </div>
       </div>
     </div>
-
     <span class="docs-trans docs-demo__triangle"
           :class="{'hover': hovering}"
           @mouseenter="hovering = true"

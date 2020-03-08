@@ -2,6 +2,7 @@
 // This file is auto gererated by build/build-entry.js
 import Button from './button'
 import Popover from './popover'
+import Message from './message'
 const version = '0.0.1'
 const components = [
   Button,
@@ -10,6 +11,8 @@ const components = [
 const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
+
+    Vue.prototype.$message = Message
   })
 };
 /* istanbul ignore if */

@@ -70,9 +70,9 @@
       "desc": "视图",
       "children": [
         {
-          "desc": "开发中...",
-          "name": "",
-          "path": ""
+          "desc": "Message 全局提示",
+          "name": "message",
+          "path": "message"
         }
       ]
     },
@@ -111,7 +111,7 @@
     {
       "name": "git-standard",
       "path": "/git-standard",
-      "desc": "Git提交规范"
+      "desc": "Git规范"
     },
     {
       "name": "bem",

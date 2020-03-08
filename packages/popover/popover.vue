@@ -227,19 +227,11 @@ export default create({
         console.warn('[Vuxes Warn][Popover]a negative taindex means that the element cannot be focused by tab key')
       }
       if (reference.querySelector('input, textarea')) {
-        console.log('啊啊啊啊')
         on(reference, 'focusin', this.doShow)
-        on(reference, 'focusout', () => {
-          console.log('啊啊啊啊aaaa')
-          this.doClose()
-        })
+        on(reference, 'focusout', this.doClose)
       } else {
-        console.log('啊啊啊啊2')
         on(reference, 'mousedown', this.doShow)
-        on(reference, 'mouseup', () => {
-          console.log('啊啊啊啊bbbbbb')
-          this.doClose()
-        })
+        on(reference, 'mouseup', this.doClose)
       }
     }
   },
