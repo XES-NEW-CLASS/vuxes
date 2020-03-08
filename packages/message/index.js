@@ -16,7 +16,7 @@ const Message = options => {
   }
   // 生成唯一domId
   const domId = `x-message-${num++}`
-  // 监听onclose函数调用close
+  // 执行close相关操作哦
   options.onClose = () => {
     Message.close(domId)
   }
@@ -61,7 +61,7 @@ MessageType.forEach((type) => {
     return Message(options)
   }
 })
-// close事件
+// 关闭后移除重设位置
 Message.close = (domId) => {
   let removeHeight
   instances.forEach((item, index) => {

@@ -1,5 +1,5 @@
 <template>
-  <transition name="x-message-fade" @after-leave="close">
+  <transition name="x-message-fade">
     <div :class="mainClass"
          :style="positionStyle"
          v-show="visible">
@@ -71,7 +71,7 @@ export default {
       this.$destroy(true)
       // 移除当前节点
       this.$el.parentNode.removeChild(this.$el)
-      // 调用close函数
+      // 调用onclose函数
       if (isFunction(this.onClose)) {
         this.onClose()
       }
