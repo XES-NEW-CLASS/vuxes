@@ -11,6 +11,7 @@
   </transition>
 </template>
 <script>
+import { isFunction } from '~/utils/data-type'
 export default {
   name: 'message',
   data () {
@@ -23,7 +24,8 @@ export default {
       duration: 2000, // 展示时长
       timer: null,
       iconType: ['info', 'error', 'success', 'warning'], // icon类型
-      isIconShow: true // 是否展示icon
+      isIconShow: true, // 是否展示icon
+      onClose: null
     }
   },
   computed: {
@@ -69,7 +71,10 @@ export default {
       this.$destroy(true)
       // 移除当前节点
       this.$el.parentNode.removeChild(this.$el)
-      // this.onClose(this)
+      // 调用close函数
+      if (isFunction(this.onClose)) {
+        this.onClose()
+      }
     }
   }
 }

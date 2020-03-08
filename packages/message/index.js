@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Toast from './message.vue'
+import { isString, isNumber, isBoolean } from '~/utils/data-type'
 
 const instances = [] // 多个创建
 const ToastConstructor = Vue.extend(Toast)
@@ -7,14 +8,14 @@ let num = 0
 const Message = options => {
   if (Vue.prototype.$isServer) return
   options = options || {} // 默认是个对象
-  if (typeof options === 'string') {
+  if (isString(options)) {
     options = {
       message: options
     }
   }
   // 生成唯一domId
   const domId = `x-message-${num++}`
-  options.onClose = function () {
+  options.onClose = () => {
     Message.close(domId)
   }
   // 实例化message.vue
@@ -25,16 +26,18 @@ const Message = options => {
   document.body.appendChild(instance.$el)
   instance.domId = domId
   // 计算定位高度
-  let verticalOffset = options.verticalOffset || 20
+  let verticalOffset = isNumber(options.verticalOffset) ? options.verticalOffset : 20
   // 多个创建时的高度计算
   instances.forEach(item => {
     verticalOffset += item.$el.offsetHeight + 20
   })
   instance.verticalOffset = verticalOffset
   // icon是否展示
-  instance.isIconShow = options.isIconShow || false
+  instance.isIconShow = isBoolean(options.isIconShow) ? options.isIconShow : false
   // 可见状态
   instance.visible = true
+  // 展示时长
+  instance.duration = isNumber(options.duration) ? options.duration : 2000
   // 添加新的数组中
   instances.push(instance)
   return instance
@@ -45,7 +48,7 @@ const MessageType = Toast.data().iconType
 // Message函数中拓展 ["success", "error",'warning','info'] 方法
 MessageType.forEach((type) => {
   Message[type] = options => {
-    if (typeof options === 'string') {
+    if (isString(options)) {
       options = {
         message: options
       }
@@ -56,6 +59,7 @@ MessageType.forEach((type) => {
 })
 // close事件
 Message.close = (domId) => {
+  console.log(domId)
   // eslint-disable-next-line no-unused-vars
   instances.forEach((item, index) => {
     if (item.domId === domId) {
@@ -63,5 +67,4 @@ Message.close = (domId) => {
     }
   })
 }
-// 修改判断公用方法
 export default Message
