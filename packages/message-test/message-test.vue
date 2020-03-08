@@ -2,7 +2,7 @@
   <transition name="message-move"
               v-on:after-leave="close"
               appear>
-    <div class="x-message"
+    <div :class="bem()"
          v-show="visible">
       <span><i :class="iconType[type]" />{{content}}</span>
     </div>
@@ -10,7 +10,7 @@
 </template>
 <script>
 export default {
-  name: 'message',
+  name: 'message-test',
   data () {
     return {
       visible: true,

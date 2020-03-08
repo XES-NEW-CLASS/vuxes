@@ -7,10 +7,10 @@
 方式一：
 
 ```js
-this.$message.info('message 消息')
+this.$messageTest.info('message 消息')
 ```
 
-<x-message-demo></x-message-demo>
+<x-message-test-demo></x-message-test-demo>
 
 ## Attributes
 | 参数 | 说明 | 类型   | 可选值                                           | 默认值  |

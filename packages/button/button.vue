@@ -1,6 +1,5 @@
 <template>
-  <button class="x-btn"
-          :class="{[`x-btn-${type}`]: true}"
+  <button :class="bem([type])"
           type="button">
     <slot></slot>
   </button>
@@ -20,9 +19,6 @@ export default create({
       type: String,
       default: 'default'
     }
-  },
-  created () {
-
   }
 })
 </script>

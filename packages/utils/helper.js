@@ -5,7 +5,7 @@
  * @param {*} validList
  * @returns {Boolean}
  */
-export function oneOf (value, validList) {
+export const oneOf = (value, validList) => {
   for (let i = 0; i < validList.length; i++) {
     if (value === validList[i]) {
       return true
@@ -20,7 +20,7 @@ export function oneOf (value, validList) {
  * @param {*} str
  * @returns {str}
  */
-export function camelize (str) {
+export const camelize = (str) => {
   const camelizeRE = /-(\w)/g
   return str.replace(camelizeRE, (_, c) => c.toUpperCase())
 }
@@ -31,7 +31,7 @@ export function camelize (str) {
  * @param {*} value
  * @returns {Boolean}
  */
-export function isDef (value) {
+export const isDef = (value) => {
   return value !== undefined && value !== null
 }
 
@@ -39,7 +39,7 @@ export function isDef (value) {
  * 生成随机id
  * @returns {number}
  */
-export const generateId = function () {
+export const generateId = () => {
   return Math.floor(Math.random() * 10000)
 }
 

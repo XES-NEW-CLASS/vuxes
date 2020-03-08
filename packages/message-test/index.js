@@ -1,4 +1,4 @@
-import Element from './message.vue'
+import Element from './message-test.vue'
 import create from '~/utils/create-prototype'
 import { isString, isNumber } from '~/utils/data-type'
 

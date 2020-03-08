@@ -7,10 +7,10 @@
 
 <script>
 export default {
-  name: 'x-message-demo',
+  name: 'x-message-test-demo',
   methods: {
     info () {
-      this.$message.info('message 消息')
+      this.$messageTest.info('message 消息')
     }
   }
 }
