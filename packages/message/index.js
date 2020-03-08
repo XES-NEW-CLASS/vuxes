@@ -35,13 +35,14 @@ const Message = options => {
     verticalOffset += item.$el.offsetHeight + 16
   })
   instance.verticalOffset = verticalOffset
-  console.log(instance.verticalOffset)
   // icon是否展示
   instance.isIconShow = isBoolean(options.isIconShow) ? options.isIconShow : true
   // 可见状态
   instance.visible = true
   // 展示时长
   instance.duration = isNumber(options.duration) ? options.duration : 2000
+  // 字体颜色
+  instance.fontColor = isString(options.fontColor) && options.fontColor !== '' ? options.fontColor : '#fff'
   // 添加新的数组中
   instances.push(instance)
   return instance

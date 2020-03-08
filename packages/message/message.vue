@@ -1,7 +1,7 @@
 <template>
   <transition name="x-message-fade">
     <div :class="mainClass"
-         :style="positionStyle"
+         :style="mainStyle"
          v-show="visible">
       <!-- iocn图标 -->
       <i :class="`x-icon-${type}`" v-if="isIconShow"></i>
@@ -25,7 +25,8 @@ export default {
       timer: null,
       iconType: ['info', 'error', 'success', 'warning'], // icon类型
       isIconShow: true, // 是否展示icon
-      onClose: null
+      onClose: null,
+      fontColor: '' // 字体颜色
     }
   },
   computed: {
@@ -41,10 +42,11 @@ export default {
       return className
     },
     // 定位top值
-    positionStyle () {
-      const { verticalOffset } = this
+    mainStyle () {
+      const { verticalOffset, fontColor } = this
       return {
-        top: `${verticalOffset}px`
+        top: `${verticalOffset}px`,
+        color: `${fontColor}`
       }
     }
   },
