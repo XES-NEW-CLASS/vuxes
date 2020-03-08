@@ -6,7 +6,7 @@ Vue.use(Elements)
 
 let id = 0
 
-const createElm = function () {
+export const createElm = function () {
   const elm = document.createElement('div')
 
   elm.id = 'test-app' + ++id
@@ -32,11 +32,11 @@ export const destroyVM = function (vm) {
  * @param  {Boolean=false} mounted 是否添加到 DOM 上
  * @return {Object} vm
  */
-export const createVue = function (Compo, mounted = false) {
+export const createVue = function (Compo, mounted = false, mountedElm) {
   if (Object.prototype.toString.call(Compo) === '[object String]') {
     Compo = { template: Compo }
   }
-  return new Vue(Compo).$mount(mounted === false ? null : createElm())
+  return new Vue(Compo).$mount(mounted === false ? null : mountedElm || createElm())
 }
 
 /**
@@ -115,7 +115,10 @@ export const triggerKeyDown = function (el, keyCode) {
  * @returns {*}
  */
 export const findOneDom = (wrapper, selector) => {
-  return wrapper.find(selector)
+  if (wrapper.__proto__.constructor.toString().indexOf('VueWrapper') >= 0) {
+    return wrapper.find(selector)
+  }
+  return wrapper.querySelector(selector)
 }
 
 /**
@@ -125,5 +128,8 @@ export const findOneDom = (wrapper, selector) => {
  * @returns {WrapperArray<Vue> | void}
  */
 export const findAllDom = (wrapper, selector) => {
-  return wrapper.findAll(selector)
+  if (wrapper.__proto__.constructor.toString().indexOf('VueWrapper') >= 0) {
+    return wrapper.findAll(selector)
+  }
+  return wrapper.querySelectorAll(selector)
 }

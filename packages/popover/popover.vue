@@ -93,8 +93,10 @@ export default create({
     },
     doShow () {
       this.showPopper = true
+      console.log('doShow', this.showPopper)
     },
     doClose () {
+      console.log('doClose')
       this.showPopper = false
     },
     handleFocus () {
@@ -173,6 +175,7 @@ export default create({
       if (this.disabled) {
         return
       }
+      console.log('showPopper', val)
       val ? this.$emit('show') : this.$emit('hide')
     }
   },
@@ -224,11 +227,19 @@ export default create({
         console.warn('[Vuxes Warn][Popover]a negative taindex means that the element cannot be focused by tab key')
       }
       if (reference.querySelector('input, textarea')) {
+        console.log('啊啊啊啊')
         on(reference, 'focusin', this.doShow)
-        on(reference, 'focusout', this.doClose)
+        on(reference, 'focusout', () => {
+          console.log('啊啊啊啊aaaa')
+          this.doClose()
+        })
       } else {
+        console.log('啊啊啊啊2')
         on(reference, 'mousedown', this.doShow)
-        on(reference, 'mouseup', this.doClose)
+        on(reference, 'mouseup', () => {
+          console.log('啊啊啊啊bbbbbb')
+          this.doClose()
+        })
       }
     }
   },
