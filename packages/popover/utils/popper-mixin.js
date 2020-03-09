@@ -79,6 +79,7 @@ export default {
     },
     // 创建PopperJS实例
     createPopper () {
+      console.log('createPopper', this.$isServer, this.appendToBody)
       if (this.$isServer) return
       this.currentPlacement = this.currentPlacement || this.placement
 

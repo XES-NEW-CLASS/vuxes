@@ -171,11 +171,11 @@ export default create({
     }
   },
   watch: {
-    showPopper (val) {
+    showPopper (val, old) {
       if (this.disabled) {
         return
       }
-      console.log('showPopper', val)
+      console.log('showPopper', val, old)
       val ? this.$emit('show') : this.$emit('hide')
     }
   },

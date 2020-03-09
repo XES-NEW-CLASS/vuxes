@@ -1,8 +1,6 @@
-import 'regenerator-runtime/runtime'
-import { shallowMount } from '@vue/test-utils'
-import { findOneDom, findAllDom, createVue, createElm, triggerEvent } from '../../jestUtils/dom'
+import { findOneDom, findAllDom, createVue, createElm, triggerEvent } from '../../../jestUtils/dom'
 
-import Popover from '~/popover/index'
+import Popover from '~/popover/popover'
 
 const popoverTemplete = ({ trigger }) => {
   if (trigger !== 'manual') {
@@ -43,8 +41,12 @@ const popoverTemplete = ({ trigger }) => {
     }
   }
 }
-let currentMountedElm, currentVue
+let currentMountedElm, currentMountedParent, currentVue
 describe('测试 Popover 组件的功能', () => {
+
+  describe('Popover 组件快照', () => {
+    expect(Popover).toMatchSnapshot()
+  })
 
   describe('Popover 的四种触发方式', () => {
     let index = 0
