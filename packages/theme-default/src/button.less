@@ -1,5 +1,5 @@
-@import "common/var";
-@btn-prefix-cls: ~"@{css-prefix}btn";
+@import 'common/var';
+@btn-prefix-cls: ~'@{css-prefix}button';
 
 .@{btn-prefix-cls} {
   min-width: 60px;
@@ -12,13 +12,14 @@
   outline: none;
   border: 1px solid transparent;
   padding: 0 10px;
+  cursor: pointer;
 
   &:active,
   &:focus {
     outline: none;
   }
 
-  &-default {
+  &--default {
     color: #333;
     border-color: #555;
 
@@ -28,7 +29,8 @@
       background-color: rgba(@--color-primary, 0.3);
     }
   }
-  &-primary {
+
+  &--primary {
     color: #fff;
     background-color: @--color-primary;
 
@@ -39,7 +41,7 @@
     }
   }
 
-  &-info {
+  &--info {
     color: #fff;
     background-color: @--color-info;
 
@@ -49,7 +51,8 @@
       background-color: average(@--color-info, #ccc);
     }
   }
-   &-success {
+
+  &--success {
     color: #fff;
     background-color: @--color-success;
 
@@ -57,6 +60,28 @@
     &:focus,
     &:hover {
       background-color: average(@--color-success, #ccc);
+    }
+  }
+
+  &--warning {
+    color: #fff;
+    background-color: @--color-warning;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: average(@--color-warning, #ccc);
+    }
+  }
+
+  &--danger {
+    color: #fff;
+    background-color: @--color-danger;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: average(@--color-danger, #ccc);
     }
   }
 }

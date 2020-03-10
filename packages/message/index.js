@@ -5,7 +5,7 @@ import { isString, isNumber, isBoolean } from '~/utils/data-type'
 const instances = [] // 多个创建
 const ToastConstructor = Vue.extend(Toast)
 let num = 0
-const Message = options => {
+const Message = (options, type) => {
   if (Vue.prototype.$isServer) return
   options = options || {} // 默认是个对象
   if (options === '') return
@@ -13,6 +13,7 @@ const Message = options => {
     options = {
       message: options
     }
+    options.type = type
   }
   // 生成唯一domId
   const domId = `x-message-${num++}`
@@ -58,17 +59,9 @@ const Message = options => {
 // Message函数中拓展 ["success", "error",'warning','info'] 方法
 const MessageType = Toast.data().iconType
 MessageType.forEach(type => {
-  Message[type] = options => {
-    if (options === '') return
-    if (isString(options)) {
-      options = {
-        message: options
-      }
-    }
-    options.type = type
-    return Message(options)
-  }
+  Message[type] = options => Message(options, type)
 })
+
 // 关闭后移除重设位置
 Message.close = domId => {
   let removeHeight

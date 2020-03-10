@@ -67,6 +67,7 @@
     "fs-extra": "^7.0.1",
     "gh-pages": "^2.2.0",
     "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
     "highlight.js": "^9.18.1",
     "husky": "^4.2.3",
     "jest-transform-stub": "^2.0.0",

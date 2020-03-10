@@ -3,8 +3,9 @@ import App from './App.vue'
 import router from './router'
 import demoBlock from './components/demo-block.vue'
 import vuxes from '../packages/index'
-// import '../lib/theme-default/index.css'
 import '../packages/theme-default/src/index.less'
+// import vuxes from '../lib/index.common'
+// import '../lib/theme-default/index.css'
 
 Vue.component('demo-block', demoBlock)
 Vue.use(vuxes)
@@ -18,6 +19,7 @@ function importDemos (r) {
 }
 importDemos(require.context('@/demos', true, /\.vue$/))
 
+console.log('main.js: ', Demos)
 Demos.map(component => Vue.component(component.name, component))
 
 // Promise Catch不报错

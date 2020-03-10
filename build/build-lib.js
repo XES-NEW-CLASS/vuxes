@@ -16,6 +16,6 @@ tasks.forEach(task => {
 
   const interactive = new Signale({ interactive: true })
   interactive.pending(task)
-  shell.exec(`npm run ${task} --silent`)
+  shell.exec(`npm run ${task} -s`)
   interactive.success(task)
 })

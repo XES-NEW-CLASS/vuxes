@@ -93,8 +93,10 @@ export default create({
     },
     doShow () {
       this.showPopper = true
+      console.log('doShow', this.showPopper)
     },
     doClose () {
+      console.log('doClose')
       this.showPopper = false
     },
     handleFocus () {
@@ -169,7 +171,7 @@ export default create({
     }
   },
   watch: {
-    showPopper (val) {
+    showPopper (val, old) {
       if (this.disabled) {
         return
       }

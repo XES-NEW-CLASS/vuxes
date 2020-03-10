@@ -2,26 +2,26 @@
   "引导": [
     {
       "name": "index",
-      "path": "/"
+      "path": "index"
     },
     {
       "name": "introduce",
-      "path": "/introduce",
+      "path": "introduce",
       "desc": "介绍"
     },
     {
       "name": "install",
-      "path": "/install",
+      "path": "install",
       "desc": "安装"
     },
     {
       "name": "start",
-      "path": "/start",
+      "path": "start",
       "desc": "快速上手"
     },
     {
       "name": "logs",
-      "path": "/logs",
+      "path": "logs",
       "desc": "更新日志"
     }
   ],
@@ -32,7 +32,7 @@
         {
           "desc": "Button 按钮",
           "name": "button",
-          "path": "/button"
+          "path": "button"
         }
       ]
     },
@@ -92,30 +92,40 @@
         {
           "desc": "Popover",
           "name": "popover",
-          "path": "/popover"
+          "path": "popover"
         }
       ]
     }
   ],
   "开发指南": [
     {
-      "name": "contribute",
-      "path": "/contribute",
-      "desc": "如何开发"
+      "desc": "如何开发",
+      "children": [
+        {
+          "desc": "开发组件",
+          "name": "exploit-component",
+          "path": "exploit-component"
+        },
+        {
+          "desc": "开发文档",
+          "name": "exploit-doc",
+          "path": "exploit-doc"
+        }
+      ]
     },
     {
       "name": "file-structure",
-      "path": "/file-structure",
+      "path": "file-structure",
       "desc": "项目结构"
     },
     {
       "name": "git-standard",
-      "path": "/git-standard",
+      "path": "git-standard",
       "desc": "Git规范"
     },
     {
       "name": "bem",
-      "path": "/bem",
+      "path": "bem",
       "desc": "Bem规范"
     }
   ]

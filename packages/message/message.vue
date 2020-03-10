@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       preClass: 'x-message', // 默认class
-      type: 'info', // type类型
+      type: '', // type类型
       verticalOffset: 20, // 默认top值
       visible: false, // 可见状态
       message: '', // 提示文案

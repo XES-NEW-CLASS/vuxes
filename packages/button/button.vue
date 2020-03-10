@@ -1,5 +1,6 @@
 <template>
-  <button class="x-btn" :class="{ [`x-btn-${type}`]: true }" type="button">
+  <button :class="bem([type])"
+          type="button">
     <slot></slot>
   </button>
 </template>

@@ -3,6 +3,7 @@
  */
 import bem from '../mixins/bem'
 import { isDef, camelize } from './helper'
+import config from './config'
 
 // 组件自动挂载
 function install (Vue) {
@@ -33,7 +34,7 @@ function defaultProps (props) {
 }
 
 export default function (ctx) {
-  ctx.name = 'x-' + ctx.name
+  ctx.name = config.prefix + ctx.name
   ctx.install = ctx.install || install
   ctx.mixins = ctx.mixins || []
   ctx.mixins.push(bem)

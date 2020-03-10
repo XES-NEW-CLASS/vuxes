@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import { merge } from '~/utils/helper';
 import PopupManager from './popup-manager';
-import getScrollBarWidth from './scrollbar-width';
+import getScrollBarWidth from '../scrollbar-width';
 import { getStyle, addClass, removeClass, hasClass } from '~/utils/dom';
 
 let idSeed = 1;

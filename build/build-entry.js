@@ -9,33 +9,33 @@ const pkg = require('../package.json')
 const version = process.env.VERSION || pkg.version
 const tips = `/* eslint-disable */
 // This file is auto gererated by build/build-entry.js`
-// const root = path.join(__dirname, '../')
-// const join = dir => path.join(root, dir)
 
+// 创建入口
 function buildPackagesEntry () {
-  const uninstallComponents = []
+  // 不挂载的组件列表
+  const uninstallComponents = ['Message']
 
   const importList = Components.map(
     name => `import ${uppercamelize(name)} from './${name}'`
   )
   const exportList = Components.map(name => `${uppercamelize(name)}`)
-  const intallList = exportList.filter(
+  const installList = exportList.filter(
     name => !~uninstallComponents.indexOf(uppercamelize(name))
   )
   const content = `${tips}
 ${importList.join('\n')}
 const version = '${version}'
 const components = [
-  ${intallList.join(',\n  ')}
+  ${installList.join(',\n  ')}
 ]
 const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
-
+    Vue.prototype.$messageTest = MessageTest
     Vue.prototype.$message = Message
   })
 };
-/* istanbul ignore if */
+
 if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue)
 }
