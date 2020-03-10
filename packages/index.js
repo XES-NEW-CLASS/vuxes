@@ -1,6 +1,7 @@
 /* eslint-disable */
 // This file is auto gererated by build/build-entry.js
 import Button from './button'
+import Message from './message'
 import MessageTest from './message-test'
 import Popover from './popover'
 const version = '0.0.1'
@@ -24,6 +25,7 @@ export {
   install,
   version,
   Button,
+  Message,
   MessageTest,
   Popover
 }
