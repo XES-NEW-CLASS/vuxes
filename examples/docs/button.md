@@ -7,8 +7,6 @@
 方式一：
 通过 `x-button`标签来引用
 
-```html```
-
 <x-button-demo></x-button-demo>
 
 ::: demo
