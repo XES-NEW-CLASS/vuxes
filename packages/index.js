@@ -1,19 +1,20 @@
 /* eslint-disable */
 // This file is auto gererated by build/build-entry.js
 import Button from './button'
-import MessageTest from './message-test'
+// import Message from './message'
+// import MessageTest from './message-test'
 import Popover from './popover'
 const version = '0.0.1'
 const components = [
   Button,
-  MessageTest,
+  // MessageTest,
   Popover
 ]
 const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
 
-    Vue.prototype.$messageTest = MessageTest
+    // Vue.prototype.$messageTest = MessageTest
   })
 };
 
@@ -24,7 +25,8 @@ export {
   install,
   version,
   Button,
-  MessageTest,
+  // Message,
+  // MessageTest,
   Popover
 }
 export default {

@@ -7,8 +7,6 @@
 方式一：
 通过 `x-popover`标签来引用
 
-<x-popover-base-demo></x-popover-base-demo>
-
 ::: demo
 
 ```html
@@ -20,7 +18,18 @@
 方式二：
 内嵌代码
 
-<x-popover-nest-demo></x-popover-nest-demo>
+::: demo
+
+```html
+待写
+```
+
+:::
+
+方式三：
+通过指令v-popover指定popover元素
+
+<x-popover-directive-demo></x-popover-directive-demo>
 
 ::: demo
 

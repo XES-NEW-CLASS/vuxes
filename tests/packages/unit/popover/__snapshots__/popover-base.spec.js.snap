@@ -27,6 +27,8 @@ Object {
     "handleMouseEnter": [Function],
     "handleMouseLeave": [Function],
     "isDef": [Function],
+    "referenceAddActions": [Function],
+    "removeReferenceActions": [Function],
   },
   "mixins": Array [
     Object {
@@ -76,7 +78,7 @@ Object {
     },
     Object {
       "methods": Object {
-        "b": [Function],
+        "bem": [Function],
       },
     },
   ],

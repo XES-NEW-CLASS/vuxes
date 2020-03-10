@@ -23,7 +23,6 @@ const popoverTemplete = ({ trigger }) => {
       methods: {
         changePopoverStatus () {
           this.isShow = !this.isShow
-          console.log('isShow: ', this.isShow)
         }
       },
       template: `
