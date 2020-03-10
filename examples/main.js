@@ -7,6 +7,7 @@ import '../packages/theme-default/src/index.less'
 // import vuxes from '../lib/index.common'
 // import '../lib/theme-default/index.css'
 import icon from './icon.json'
+import iconTutor from './icon-tutor.json'
 
 Vue.component('demo-block', demoBlock)
 Vue.use(vuxes)
@@ -24,6 +25,7 @@ console.log('main.js: ', Demos)
 Demos.map(component => Vue.component(component.name, component))
 
 Vue.prototype.$icon = icon // Icon 列表页用
+Vue.prototype.$iconTutor = iconTutor // Icon 列表页用
 
 Vue.config.productionTip = false
 
