@@ -1,8 +1,8 @@
 <template>
   <div class="demo-block">
-    <x-button class="mr-10">默认按钮</x-button>
+    <x-button class="mr-10"><i class="tutor-icon-pomelo"></i>默认按钮</x-button>
     <x-button class="mr-10"
-              type="primary">主要按钮</x-button>
+              type="primary"><i class="x-icon-ice-cream-round"></i>主要按钮</x-button>
     <x-button class="mr-10"
               type="success">成功按钮</x-button>
     <x-button class="mr-10"

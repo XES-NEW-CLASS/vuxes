@@ -6,6 +6,7 @@ import vuxes from '../packages/index'
 import '../packages/theme-default/src/index.less'
 // import vuxes from '../lib/index.common'
 // import '../lib/theme-default/index.css'
+import icon from './icon.json'
 
 Vue.component('demo-block', demoBlock)
 Vue.use(vuxes)
@@ -22,10 +23,12 @@ importDemos(require.context('@/demos', true, /\.vue$/))
 console.log('main.js: ', Demos)
 Demos.map(component => Vue.component(component.name, component))
 
-// Promise Catch不报错
-window.addEventListener('unhandledrejection', event => event.preventDefault())
+Vue.prototype.$icon = icon // Icon 列表页用
 
 Vue.config.productionTip = false
+
+// Promise Catch不报错
+window.addEventListener('unhandledrejection', event => event.preventDefault())
 
 new Vue({
   router,
