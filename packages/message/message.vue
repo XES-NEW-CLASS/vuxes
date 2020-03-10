@@ -4,7 +4,8 @@
          :style="mainStyle"
          v-show="visible">
       <!-- iocn图标 -->
-      <i :class="`x-icon-${type}`" v-if="isIconShow"></i>
+      <i :class="`x-icon-${type}`"
+         v-if="isIconShow"></i>
       <!-- 渲染文案 -->
       <p>{{ message }}</p>
     </div>
@@ -17,17 +18,25 @@ export default {
   data () {
     return {
       preClass: 'x-message', // 默认class
-      type: '', // type类型
-      verticalOffset: 20, // 默认top值
-      visible: false, // 可见状态
-      message: '', // 提示文案
-      duration: 2000, // 展示时长
+      visible: true, // 可见状态
       timer: null,
-      iconType: ['info', 'error', 'success', 'warning'], // icon类型
-      isIconShow: true, // 是否展示icon
-      onClose: null,
-      fontColor: '' // 字体颜色
+      msgType: ['info', 'error', 'success', 'warning'], // icon类型
+      onClose: null
     }
+  },
+  props: {
+    message: String,
+    type: String,
+    duration: {
+      type: Number,
+      default: 2000
+    },
+    verticalOffset: {
+      type: Number,
+      default: 20
+    },
+    isIconShow: Boolean,
+    fontColor: String
   },
   computed: {
     // 外层样式

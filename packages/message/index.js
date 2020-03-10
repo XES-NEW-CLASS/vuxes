@@ -1,69 +1,46 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import Toast from './message.vue'
-import { isString, isNumber, isBoolean } from '~/utils/data-type'
+import { isString, isNumber, isBoolean, isObject } from '~/utils/data-type'
+import create from '~/utils/create-prototype'
 
-const instances = [] // 多个创建
-const ToastConstructor = Vue.extend(Toast)
-let num = 0
-const Message = (options, type) => {
-  if (Vue.prototype.$isServer) return
-  options = options || {} // 默认是个对象
-  if (options === '') return
-  if (isString(options)) {
-    options = {
-      message: options
-    }
-    options.type = type
+const instances = []
+let num = 1
+const createMessage = (options, msgType) => {
+  // 创建message实例
+  options = options || {}
+  if (options === '' || (isObject(options) && options.message === '')) return
+  const props = {
+    message: isObject(options) ? options.message : options,
+    type: msgType || 'default',
+    duration: isNumber(options.duration) ? options.duration : 2000,
+    isIconShow: isBoolean(options.isIconShow) ? options.isIconShow : true,
+    fontColor: isString(options.fontColor) ? options.fontColor : '#fff',
+    verticalOffset: isNumber(options.verticalOffset) ? options.verticalOffset : 20
   }
-  // 生成唯一domId
-  const domId = `x-message-${num++}`
-  // 执行close相关操作哦
-  options.onClose = () => {
-    Message.close(domId)
-  }
-  // 实例化message.vue
-  const instance = new ToastConstructor({
-    data: options
-  }).$mount()
-  // 添加到body中
-  document.body.appendChild(instance.$el)
-  // 添加domid
-  instance.domId = domId
-  // 计算定位高度
-  let verticalOffset = isNumber(options.verticalOffset)
-    ? options.verticalOffset
-    : 20
-  // 多个创建时的高度计算
+  let verticalOffset = props.verticalOffset
   instances.forEach(item => {
     verticalOffset += item.$el.offsetHeight + 16
   })
-  instance.verticalOffset = verticalOffset
-  // icon是否展示
-  instance.isIconShow = isBoolean(options.isIconShow)
-    ? options.isIconShow
-    : true
-  // 可见状态
-  instance.visible = true
-  // 展示时长
-  instance.duration = isNumber(options.duration) ? options.duration : 2000
-  // 字体颜色
-  instance.fontColor =
-    isString(options.fontColor) && options.fontColor !== ''
-      ? options.fontColor
-      : '#fff'
-  // 添加新的数组中
-  instances.push(instance)
-  return instance
+  props.verticalOffset = verticalOffset
+  const domId = `x-message-${num++}`
+  const message = create(Toast, props)
+  message.domId = domId
+  instances.push(message)
+  message.onClose = () => {
+    closeMsg(domId)
+  }
+  return message
 }
 
-// Message函数中拓展 ["success", "error",'warning','info'] 方法
-const MessageType = Toast.data().iconType
-MessageType.forEach(type => {
-  Message[type] = options => Message(options, type)
+// 扩展方法
+const methods = Toast.data().msgType
+const Message = {}
+methods.forEach(type => {
+  Message[type] = options => createMessage(options, type)
 })
 
-// 关闭后移除重设位置
-Message.close = domId => {
+// close方法
+const closeMsg = (domId) => {
   let removeHeight
   instances.forEach((item, index) => {
     if (item.domId === domId) {
@@ -74,7 +51,7 @@ Message.close = domId => {
   // 重新设置top值
   instances.forEach(item => {
     item.$el.style.top =
-      parseInt(item.$el.style.top, 10) - removeHeight - 16 + 'px'
+        parseInt(item.$el.style.top, 10) - removeHeight - 16 + 'px'
   })
 }
 export default Message
