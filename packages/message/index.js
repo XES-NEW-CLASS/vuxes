@@ -29,20 +29,27 @@ const Message = options => {
   // 添加domid
   instance.domId = domId
   // 计算定位高度
-  let verticalOffset = isNumber(options.verticalOffset) ? options.verticalOffset : 20
+  let verticalOffset = isNumber(options.verticalOffset)
+    ? options.verticalOffset
+    : 20
   // 多个创建时的高度计算
   instances.forEach(item => {
     verticalOffset += item.$el.offsetHeight + 16
   })
   instance.verticalOffset = verticalOffset
   // icon是否展示
-  instance.isIconShow = isBoolean(options.isIconShow) ? options.isIconShow : true
+  instance.isIconShow = isBoolean(options.isIconShow)
+    ? options.isIconShow
+    : true
   // 可见状态
   instance.visible = true
   // 展示时长
   instance.duration = isNumber(options.duration) ? options.duration : 2000
   // 字体颜色
-  instance.fontColor = isString(options.fontColor) && options.fontColor !== '' ? options.fontColor : '#fff'
+  instance.fontColor =
+    isString(options.fontColor) && options.fontColor !== ''
+      ? options.fontColor
+      : '#fff'
   // 添加新的数组中
   instances.push(instance)
   return instance
@@ -50,7 +57,7 @@ const Message = options => {
 
 // Message函数中拓展 ["success", "error",'warning','info'] 方法
 const MessageType = Toast.data().iconType
-MessageType.forEach((type) => {
+MessageType.forEach(type => {
   Message[type] = options => {
     if (options === '') return
     if (isString(options)) {
@@ -63,7 +70,7 @@ MessageType.forEach((type) => {
   }
 })
 // 关闭后移除重设位置
-Message.close = (domId) => {
+Message.close = domId => {
   let removeHeight
   instances.forEach((item, index) => {
     if (item.domId === domId) {
@@ -73,7 +80,8 @@ Message.close = (domId) => {
   })
   // 重新设置top值
   instances.forEach(item => {
-    item.$el.style.top = parseInt(item.$el.style.top, 10) - removeHeight - 16 + 'px'
+    item.$el.style.top =
+      parseInt(item.$el.style.top, 10) - removeHeight - 16 + 'px'
   })
 }
 export default Message
