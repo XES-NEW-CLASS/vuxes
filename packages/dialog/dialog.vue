@@ -1,20 +1,19 @@
 <template>
   <transition>
-    <div :class="preClass" v-show="visible">
-      <div :class="`${preClass}-box`" :style="{width:width}">
-        <div :class="`${preClass}-top`">
-          <span :class="`${preClass}-tips`">提示</span>
-          <span :class="`${preClass}-close`">×</span>
+    <div class="x-dialog" v-show="visible">
+      <div class="x-dialog-box" :style="{width:width}">
+        <div class="x-dialog}-top">
+          <span class="x-dialog-tips">{{title}}</span>
+          <i v-show="showClose" class="x-icon-close x-dialog-icon"></i>
         </div>
-        <div class="x-dialog-content">
-          内容
+        <div class="x-dialog-content" v-html="content">
         </div>
         <div class="x-dialog-bottom">
-          <div class="left"></div>
-          <div class="right"></div>
+          <div class="x-dialog-bottom_left">{{isCancelText}}</div>
+          <div class="x-dialog-bottom_right">{{isConfirmText}}</div>
         </div>
       </div>
-      <div class="x-dialog-mask"></div>
+      <div class="x-dialog-mask" v-show="isMask"></div>
     </div>
   </transition>
 </template>
@@ -30,9 +29,33 @@ export default create({
     }
   },
   props: {
+    title: {
+      type: String,
+      default: '提示'
+    },
     width: {
       type: String,
       default: '50%'
+    },
+    isMask: {
+      type: Boolean,
+      default: true
+    },
+    content: {
+      type: String,
+      default: '呵呵'
+    },
+    showClose: {
+      type: Boolean,
+      default: true
+    },
+    isCancelText: {
+      type: String,
+      default: '取消'
+    },
+    isConfirmText: {
+      type: String,
+      default: '确认'
     }
   }
 
