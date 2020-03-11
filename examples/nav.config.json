@@ -100,6 +100,16 @@
           "path": "popover"
         }
       ]
+    },
+    {
+      "desc": "dialog",
+      "children": [
+        {
+          "desc": "dialog",
+          "name": "dialog",
+          "path": "dialog"
+        }
+      ]
     }
   ],
   "开发指南": [
