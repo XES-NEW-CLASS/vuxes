@@ -1,4 +1,3 @@
-// import Vue from 'vue'
 import Toast from './message.vue'
 import { isString, isNumber, isBoolean, isObject } from '~/utils/data-type'
 import create from '~/utils/create-prototype'
@@ -15,7 +14,9 @@ const createMessage = (options, msgType) => {
     duration: isNumber(options.duration) ? options.duration : 2000,
     isIconShow: isBoolean(options.isIconShow) ? options.isIconShow : true,
     fontColor: isString(options.fontColor) ? options.fontColor : '#fff',
-    verticalOffset: isNumber(options.verticalOffset) ? options.verticalOffset : 20
+    verticalOffset: isNumber(options.verticalOffset)
+      ? options.verticalOffset
+      : 20
   }
   let verticalOffset = props.verticalOffset
   instances.forEach(item => {
@@ -40,7 +41,7 @@ methods.forEach(type => {
 })
 
 // close方法
-const closeMsg = (domId) => {
+const closeMsg = domId => {
   let removeHeight
   instances.forEach((item, index) => {
     if (item.domId === domId) {
@@ -48,10 +49,9 @@ const closeMsg = (domId) => {
       instances.splice(index, 1)
     }
   })
-  // 重新设置top值
   instances.forEach(item => {
     item.$el.style.top =
-        parseInt(item.$el.style.top, 10) - removeHeight - 16 + 'px'
+      parseInt(item.$el.style.top, 10) - removeHeight - 16 + 'px'
   })
 }
 export default Message

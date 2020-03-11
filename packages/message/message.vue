@@ -3,11 +3,9 @@
     <div :class="mainClass"
          :style="mainStyle"
          v-show="visible">
-      <!-- iocn图标 -->
       <i :class="`x-icon-${type}`"
          v-if="isIconShow"></i>
-      <!-- 渲染文案 -->
-      <p>{{ message }}</p>
+      <p class="x-message-text">{{ message }}</p>
     </div>
   </transition>
 </template>
