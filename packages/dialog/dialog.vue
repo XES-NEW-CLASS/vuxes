@@ -4,7 +4,7 @@
       <div class="x-dialog-box" :style="{width:width}">
         <div class="x-dialog}-top">
           <span class="x-dialog-tips">{{title}}</span>
-          <i v-show="showClose" class="x-icon-close x-dialog-icon"></i>
+          <i @click="closeDialog()" v-show="showClose" class="x-icon-close x-dialog-icon"></i>
         </div>
         <div class="x-dialog-content" v-html="content">
         </div>
@@ -56,6 +56,15 @@ export default create({
     isConfirmText: {
       type: String,
       default: '确认'
+    }
+  },
+  methods: {
+    closeDialog () {
+      this.visible = false
+      this.$emit('close')
+    },
+    openDialog () {
+      this.visible = true
     }
   }
 
