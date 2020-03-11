@@ -17,7 +17,8 @@ export default {
     messageError (type) {
       this.$message[type]({
         type: type,
-        message: '哈哈'
+        message: '哈哈',
+        isIconShow: false
       })
     }
   }

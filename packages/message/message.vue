@@ -33,8 +33,14 @@ export default {
       type: Number,
       default: 20
     },
-    isIconShow: Boolean,
-    fontColor: String
+    isIconShow: {
+      type: Boolean,
+      default: true
+    },
+    fontColor: {
+      type: String,
+      default: '#fff'
+    }
   },
   computed: {
     // 外层样式
