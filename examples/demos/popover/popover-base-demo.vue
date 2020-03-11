@@ -5,7 +5,6 @@
       content="测试文案"
       trigger="hover"
       placement="top-end"
-      :appendToBody="false"
     >
       <x-button slot="reference">hover 激活</x-button>
     </x-popover>

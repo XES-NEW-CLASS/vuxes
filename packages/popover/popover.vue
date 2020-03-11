@@ -5,8 +5,8 @@
       @after-enter="handleAfterEnter"
       @after-leave="handleAfterLeave">
       <div
-        class="x-popover x-popper"
-        :class="[popperClass, content && 'x-popover--plain']"
+        class="x-popper"
+        :class="[bem(), popperClass, content && bem(['plain'])]"
         ref="popper"
         v-show="!disabled && showPopper"
         :style="{ width: width + 'px', left: '100px' }"
@@ -14,7 +14,7 @@
         :id="tooltipId"
         :aria-hidden="(disabled || !showPopper) ? 'true' : 'false'"
       >
-        <div class="x-popover__title" v-if="title" v-text="title"></div>
+        <div :class="bem('title')" v-if="title" v-text="title"></div>
         <slot>{{ content }}</slot>
       </div>
     </transition>
