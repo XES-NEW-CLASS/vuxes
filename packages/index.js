@@ -7,14 +7,14 @@ import Popover from './popover'
 const version = '0.0.1'
 const components = [
   Button,
-  // MessageTest,
+  MessageTest,
   Popover
 ]
 const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
 
-    // Vue.prototype.$messageTest = MessageTest
+    Vue.prototype.$messageTest = MessageTest
   })
 };
 

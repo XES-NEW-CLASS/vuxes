@@ -1,5 +1,3 @@
-let _prevDirective
-
 /**
  * 绑定元素到reference
  * @param el 传入v-popover的dom元素
@@ -18,9 +16,10 @@ function bindingReference (el, binding, vnode) {
       // 传入的是x-popover组件
       const newBindingData = vnode.data.directives.find(direct => direct.name === 'popover')
       // 避免相同popover的变化引起update
-      if (_prevDirective && newBindingData.value === _prevDirective) return
+      if (el._prevDirective && newBindingData.value === el._prevDirective) return
+      console.log('success')
 
-      _prevDirective = newBindingData.value
+      el._prevDirective = newBindingData.value
 
       value.$refs.reference = el
       value.referenceAddActions && value.referenceAddActions()

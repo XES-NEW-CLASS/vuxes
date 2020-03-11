@@ -4,7 +4,7 @@
       title="测试用"
       content="测试文案"
       trigger="hover"
-      placement="right"
+      placement="top-end"
       :appendToBody="false"
     >
       <x-button slot="reference">hover 激活</x-button>
@@ -13,7 +13,7 @@
       title="测试用"
       content="测试文案"
       trigger="click"
-      placement="bottom-end"
+      placement="left"
     >
       <x-button slot="reference">click 激活</x-button>
     </x-popover>
@@ -21,7 +21,7 @@
       title="测试用"
       content="测试文案"
       trigger="focus"
-      plcement="right"
+      plcement="bottom-start"
     >
       <x-button slot="reference">focus 激活</x-button>
     </x-popover>
@@ -29,7 +29,7 @@
       title="测试用"
       content="测试文案"
       trigger="manual"
-      placement="top-end"
+      placement="right-end"
       v-model="isShowManualPopper"
     >
       <x-button slot="reference" @click="changeManualStatus">manual 激活</x-button>
@@ -53,3 +53,9 @@ export default {
 }
 
 </script>
+
+<style scoped>
+  button {
+    margin-right: 20px;
+  }
+</style>

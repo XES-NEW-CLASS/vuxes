@@ -1,21 +1,21 @@
 <template>
   <div class="demo-block">
-<!--    <x-popover-->
-<!--      title="测试用"-->
-<!--      content="测试文案"-->
-<!--      trigger="hover"-->
-<!--      placement="top-start"-->
-<!--      ref="myPopover"-->
-<!--    ></x-popover>-->
-<!--    <x-button v-popover:myPopover>hover 激活</x-button>-->
-<!--    <x-popover-->
-<!--      title="测试用"-->
-<!--      content="测试文案"-->
-<!--      trigger="hover"-->
-<!--      placement="right"-->
-<!--      ref="myPopover2"-->
-<!--    ></x-popover>-->
-<!--    <x-button v-popover="'myPopover2'">hover 激活</x-button>-->
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="top-start"
+      ref="myPopover"
+    ></x-popover>
+    <x-button v-popover:myPopover>hover 激活</x-button>
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="right"
+      ref="myPopover2"
+    ></x-popover>
+    <x-button v-popover="'myPopover2'">hover 激活</x-button>
     <x-popover
       title="测试用"
       content="测试文案"
@@ -41,3 +41,9 @@ export default {
 }
 
 </script>
+
+<style scoped>
+  button {
+    margin-right: 20px;
+  }
+</style>
