@@ -8,8 +8,8 @@
       <div class="x-dialog-content" v-html="content">
       </div>
       <div class="x-dialog-bottom">
-        <div class="x-dialog-bottom_left">{{isCancelText}}</div>
-        <div class="x-dialog-bottom_right">{{isConfirmText}}</div>
+        <div class="x-dialog-bottom_left" @click="cancel()">{{isCancelText}}</div>
+        <div class="x-dialog-bottom_right" @click="confirm()">{{isConfirmText}}</div>
       </div>
     </div>
     <div class="x-dialog-mask" v-show="isMask"></div>
@@ -67,7 +67,13 @@ export default create({
   },
   methods: {
     close () {
-      this.$emit('close', false)
+      this.$emit('close')
+    },
+    cancel () {
+      this.$emit('cancel')
+    },
+    confirm () {
+      this.$emit('confirm')
     }
   },
   watch: {
