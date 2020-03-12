@@ -71,11 +71,12 @@ export default create({
     }
   },
   watch: {
-    value: {
-      immediate: true,
-      handler (val) {
-        this.visible = val
-        console.log('visible:', val)
+    value (val) {
+      this.visible = val
+    },
+    visible (val) {
+      if (val) {
+        this.$emit('open')
       }
     }
   }
