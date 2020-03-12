@@ -17,7 +17,6 @@ function bindingReference (el, binding, vnode) {
       const newBindingData = vnode.data.directives.find(direct => direct.name === 'popover')
       // 避免相同popover的变化引起update
       if (el._prevDirective && newBindingData.value === el._prevDirective) return
-      console.log('success')
 
       el._prevDirective = newBindingData.value
 

@@ -1,8 +1,7 @@
 import Vue from 'vue'
 
-import { PopupManager } from './popup'
-import getScrollBarWidth from './scrollbar-width'
-const PopperJS = Vue.prototype.$isServer ? function () {} : require('./popper')
+import { PopupManager } from '../utils/popup'
+const PopperJS = Vue.prototype.$isServer ? function () {} : require('../utils/popper')
 
 const stop = e => e.stopPropagation()
 
@@ -152,8 +151,5 @@ export default {
     },
     // 销毁popper
     destroyPopper () {}
-  },
-  mounted () {
-    getScrollBarWidth()
   }
 }
