@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` 1`] = `
+Object {
+  "_Ctor": Object {
+    "0": [Function],
+  },
+  "beforeDestroy": [Function],
+  "computed": Object {
+    "tooltipId": [Function],
+  },
+  "data": [Function],
+  "destroyed": [Function],
+  "install": [Function],
+  "methods": Object {
+    "cleanTimer": [Function],
+    "doClose": [Function],
+    "doShow": [Function],
+    "doToggle": [Function],
+    "handleAfterEnter": [Function],
+    "handleAfterLeave": [Function],
+    "handleBlur": [Function],
+    "handleClick": [Function],
+    "handleDocumentClick": [Function],
+    "handleFocus": [Function],
+    "handleKeydown": [Function],
+    "handleMouseEnter": [Function],
+    "handleMouseLeave": [Function],
+    "isDef": [Function],
+    "referenceAddActions": [Function],
+    "removeReferenceActions": [Function],
+  },
+  "mixins": Array [
+    Object {
+      "data": [Function],
+      "methods": Object {
+        "appendArrow": [Function],
+        "createPopper": [Function],
+        "destroyPopper": [Function],
+        "resetTransformOrigin": [Function],
+        "updatePopper": [Function],
+      },
+      "props": Object {
+        "appendToBody": Object {
+          "default": true,
+          "type": [Function],
+        },
+        "arrowOffset": Object {
+          "default": 35,
+          "type": [Function],
+        },
+        "offset": Object {
+          "default": 0,
+        },
+        "placement": Object {
+          "default": "bottom",
+          "type": [Function],
+          "validator": [Function],
+        },
+        "popperOptions": Object {
+          "default": [Function],
+          "type": [Function],
+        },
+        "value": Object {
+          "type": [Function],
+        },
+        "visibleArrow": Object {
+          "type": [Function],
+        },
+      },
+      "watch": Object {
+        "showPopper": [Function],
+        "value": Object {
+          "handler": [Function],
+          "immediate": true,
+        },
+      },
+    },
+    Object {
+      "methods": Object {
+        "bem": [Function],
+      },
+    },
+  ],
+  "mounted": [Function],
+  "name": "x-popover",
+  "props": Object {
+    "arrowOffset": Object {
+      "default": 0,
+      "type": [Function],
+    },
+    "closeDelay": Object {
+      "default": 200,
+      "type": [Function],
+    },
+    "content": Object {
+      "type": [Function],
+    },
+    "disabled": Object {
+      "type": [Function],
+    },
+    "openDelay": Object {
+      "default": 0,
+      "type": [Function],
+    },
+    "popper": Object {},
+    "popperClass": Object {
+      "type": [Function],
+    },
+    "reference": Object {},
+    "tabindex": Object {
+      "default": 0,
+      "type": [Function],
+    },
+    "title": Object {
+      "type": [Function],
+    },
+    "transition": Object {
+      "default": "fade-in-linear",
+      "type": [Function],
+    },
+    "trigger": Object {
+      "default": "click",
+      "type": [Function],
+      "validator": [Function],
+    },
+    "visibleArrow": Object {
+      "default": true,
+    },
+    "width": Object {
+      "type": Array [
+        [Function],
+        [Function],
+      ],
+      "validator": [Function],
+    },
+  },
+  "render": [Function],
+  "staticRenderFns": Array [],
+  "watch": Object {
+    "showPopper": [Function],
+  },
+}
+`;
