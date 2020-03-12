@@ -1,21 +1,19 @@
 <template>
-  <transition>
-    <div class="x-dialog" v-show="visible">
-      <div class="x-dialog-box" :style="{width:width}">
-        <div class="x-dialog}-top">
-          <span class="x-dialog-tips">{{title}}</span>
-          <i @click="closeDialog()" v-show="showClose" class="x-icon-close x-dialog-icon"></i>
-        </div>
-        <div class="x-dialog-content" v-html="content">
-        </div>
-        <div class="x-dialog-bottom">
-          <div class="x-dialog-bottom_left">{{isCancelText}}</div>
-          <div class="x-dialog-bottom_right">{{isConfirmText}}</div>
-        </div>
+  <div class="x-dialog" v-if="visible" :value="value">
+    <div class="x-dialog-box" :style="{width:width}">
+      <div class="x-dialog}-top">
+        <span class="x-dialog-tips">{{title}}</span>
+        <i @click="close()" v-show="showClose" class="x-icon-close x-dialog-icon"></i>
       </div>
-      <div class="x-dialog-mask" v-show="isMask"></div>
+      <div class="x-dialog-content" v-html="content">
+      </div>
+      <div class="x-dialog-bottom">
+        <div class="x-dialog-bottom_left">{{isCancelText}}</div>
+        <div class="x-dialog-bottom_right">{{isConfirmText}}</div>
+      </div>
     </div>
-  </transition>
+    <div class="x-dialog-mask" v-show="isMask"></div>
+  </div>
 </template>
 <script>
 import create from '~/utils/create-basic'
@@ -25,7 +23,7 @@ export default create({
   data () {
     return {
       preClass: 'x-dialog',
-      visible: true
+      visible: false
     }
   },
   props: {
@@ -56,15 +54,29 @@ export default create({
     isConfirmText: {
       type: String,
       default: '确认'
+    },
+    value: {
+      type: Boolean,
+      default: false
+    }
+  },
+  mounted () {
+    if (this.value) {
+      this.visible = true
     }
   },
   methods: {
-    closeDialog () {
-      this.visible = false
-      this.$emit('close')
-    },
-    openDialog () {
-      this.visible = true
+    close () {
+      this.$emit('close', false)
+    }
+  },
+  watch: {
+    value: {
+      immediate: true,
+      handler (val) {
+        this.visible = val
+        console.log('visible:', val)
+      }
     }
   }
 

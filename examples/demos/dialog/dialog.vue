@@ -1,8 +1,8 @@
 <template>
   <div class="demo-block">
-    <x-dialog @close="close" :content="`<span>这是什a么鬼${num}</span>`" title="测试提示">
+    <x-dialog @close="close" v-model="visible"  v-if="visible" :content="`<span>这是什a么鬼${num}</span>`" title="测试提示">
     </x-dialog>
-    <x-button @click="open()">打开dialog组件</x-button>
+    <span class="btn" @click="open()">打开dialog组件</span>
   </div>
 </template>
 
@@ -17,11 +17,19 @@ export default {
   },
   methods: {
     open () {
-      this.$emit('open')
+      this.visible = true
     },
-    close (state) {
-      console.log('关闭了')
+    close () {
+      this.visible = false
     }
   }
 }
 </script>
+<style scoped>
+.btn {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  margin-right: 10px;
+}
+</style>
