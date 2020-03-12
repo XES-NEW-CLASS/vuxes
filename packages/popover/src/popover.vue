@@ -26,7 +26,7 @@
 import Vue from 'vue'
 import directive from './directive'
 import create from '~/utils/create-basic'
-import popperMixin from './utils/popper-mixin'
+import popperMixin from '~/mixins/popper-mixin'
 import { generateId, camelize } from '~/utils/helper'
 import { on, off, addClass, removeClass } from '~/utils/dom'
 
