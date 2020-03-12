@@ -8,7 +8,7 @@ const version = '0.0.1'
 const components = [
   Button,
   MessageTest,
-  Popover
+  Popover,
 ]
 const install = Vue => {
   components.forEach(Component => {
@@ -27,7 +27,7 @@ export {
   Button,
   Message,
   MessageTest,
-  Popover
+  Popover,
 }
 export default {
   install,

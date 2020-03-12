@@ -12,6 +12,7 @@ function bindingReference (el, binding, vnode) {
     if (typeof value === 'string') {
       const popover = vnode.context.$refs[value]
       popover.$refs.reference = el
+      console.log(popover)
     } else if (value && value._isVue && value.$vnode.tag.indexOf('x-popover') >= 0) {
       // 传入的是x-popover组件
       const newBindingData = vnode.data.directives.find(direct => direct.name === 'popover')
@@ -23,7 +24,7 @@ function bindingReference (el, binding, vnode) {
       value.$refs.reference = el
       value.referenceAddActions && value.referenceAddActions()
     }
-  // 通过v-popover:xxx调用
+    // 通过v-popover:xxx调用
   } else {
     const popover = vnode.context.$refs[binding.arg]
     if (!popover) return
