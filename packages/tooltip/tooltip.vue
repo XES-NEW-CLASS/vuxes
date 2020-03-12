@@ -27,7 +27,7 @@
   </div>
 </template>
 <script>
-import Popper from '../base/popper'
+import Popper from '~/utils/popper-mixin'
 import TransferDom from '../../directives/transfer-dom'
 import { oneOf } from '../../utils/assist'
 import { transferIndex, transferIncrease } from '../../utils/transfer-queue'
