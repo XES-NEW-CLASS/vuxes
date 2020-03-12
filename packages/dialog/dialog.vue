@@ -1,18 +1,27 @@
 <template>
-  <div class="x-dialog" v-if="visible" :value="value">
-    <div class="x-dialog-box" :style="{width:width}">
+  <div class="x-dialog"
+       v-if="visible"
+       :value="value">
+    <div class="x-dialog-box"
+         :style="{width:width}">
       <div class="x-dialog}-top">
         <span class="x-dialog-tips">{{title}}</span>
-        <i @click="close()" v-show="showClose" class="x-icon-close x-dialog-icon"></i>
+        <i @click="close()"
+           v-show="showClose"
+           class="x-icon-close x-dialog-icon"></i>
       </div>
-      <div class="x-dialog-content" v-html="content">
+      <div class="x-dialog-content"
+           v-html="content">
       </div>
       <div class="x-dialog-bottom">
-        <div class="x-dialog-bottom_left" @click="cancel()">{{isCancelText}}</div>
-        <div class="x-dialog-bottom_right" @click="confirm()">{{isConfirmText}}</div>
+        <div class="x-dialog-bottom_left"
+             @click="cancel()">{{isCancelText}}</div>
+        <div class="x-dialog-bottom_right"
+             @click="confirm()">{{isConfirmText}}</div>
       </div>
     </div>
-    <div class="x-dialog-mask" v-show="isMask"></div>
+    <div class="x-dialog-mask"
+         v-show="isMask"></div>
   </div>
 </template>
 <script>

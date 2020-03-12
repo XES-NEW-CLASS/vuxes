@@ -1,8 +1,16 @@
 <template>
   <div class="demo-block">
-    <x-dialog @close="close" @open="open" @cancel="cancel" @confirm="confirm" v-model="visible"  v-if="visible" :content="`<span>这是什a么鬼${num}</span>`" title="测试提示">
+    <x-dialog @close="close"
+              @open="open"
+              @cancel="cancel"
+              @confirm="confirm"
+              v-model="visible"
+              v-if="visible"
+              :content="`<span>这是什a么鬼${num}</span>`"
+              title="测试提示">
     </x-dialog>
-    <span class="btn" @click="openDialog()">打开dialog组件</span>
+    <span class="btn"
+          @click="openDialog()">打开dialog组件</span>
   </div>
 </template>
 
