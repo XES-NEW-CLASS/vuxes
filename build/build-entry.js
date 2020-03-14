@@ -31,9 +31,10 @@ const components = [
 const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
-    Vue.prototype.$messageTest = MessageTest
-    Vue.prototype.$message = Message
   })
+  Vue.prototype.$messageTest = MessageTest
+  Vue.prototype.$message = Message
+  Vue.prototype.$confirm = Confirm
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

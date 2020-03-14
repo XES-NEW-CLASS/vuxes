@@ -4,6 +4,7 @@ import Button from './button'
 import Message from './message'
 import MessageTest from './message-test'
 import Popover from './popover'
+import Confirm from './confirm'
 const version = '0.0.1'
 const components = [
   Button,
@@ -13,9 +14,10 @@ const components = [
 const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
-    Vue.prototype.$messageTest = MessageTest
-    Vue.prototype.$message = Message
   })
+  Vue.prototype.$messageTest = MessageTest
+  Vue.prototype.$message = Message
+  Vue.prototype.$confirm = Confirm
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -27,7 +29,8 @@ export {
   Button,
   Message,
   MessageTest,
-  Popover
+  Popover,
+  Confirm
 }
 export default {
   install,

@@ -100,6 +100,16 @@
           "path": "popover"
         }
       ]
+    },
+    {
+      "desc": "弹窗",
+      "children": [
+        {
+          "desc": "Confirm 确认框",
+          "name": "confirm",
+          "path": "confirm"
+        }
+      ]
     }
   ],
   "开发指南": [
