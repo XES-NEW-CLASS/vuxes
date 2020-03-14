@@ -25,7 +25,7 @@
 </template>
 
 <script>
-import Popper from 'at-ui/src/mixins/popper'
+import Popper from '~/mixins/popper'
 import create from '~/utils/create-basic'
 
 export default create({

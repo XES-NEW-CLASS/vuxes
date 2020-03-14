@@ -4,11 +4,13 @@ import Button from './button'
 import Message from './message'
 import MessageTest from './message-test'
 import Popover from './popover'
+import Tooltip from './tooltip'
 const version = '0.0.1'
 const components = [
   Button,
   MessageTest,
   Popover,
+  Tooltip
 ]
 const install = Vue => {
   components.forEach(Component => {
@@ -28,6 +30,7 @@ export {
   Message,
   MessageTest,
   Popover,
+  Tooltip
 }
 export default {
   install,
