@@ -6,6 +6,7 @@ const excludes = [
   'index.js',
   'theme-default',
   'mixins',
+  'directives',
   'utils',
   '.DS_Store'
 ]

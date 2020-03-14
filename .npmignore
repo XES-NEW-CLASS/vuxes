@@ -3,14 +3,27 @@ examples/
 packages/
 public/
 build/
+docs/
+src/
+tests/
+dist/
+
 # 忽略指定文件
 vue.config.js
 babel.config.js
+.browserslistrc
+.editorconfig
+.eslintrc.js
+CHANGELOG.md
+.postcssrc.js
+.commitlintrc.js
+jest.config.js
 *.map
 demo.html
 dist/
 .DS_Store
 node_modules
+
 # local env files
 .env.local
 .env.*.local
@@ -28,10 +41,3 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw*
-
-dist/
-.browserslistrc
-.editorconfig
-.eslintrc.js
-CHANGELOG.md
-postcss.config.js

@@ -2,9 +2,11 @@
   "name": "vuxes",
   "version": "0.0.1",
   "description": "学而思新课堂Vue组件库",
-  "main": "lib/vuxes.common.js",
+  "main": "lib/index.umd.js",
+  "unpkg": "lib/index.umd.min.js",
+  "module": "lib/index.common.js",
   "style": "lib/theme-default/index.css",
-  "author": "XES-Team",
+  "author": "xes-new-class",
   "private": false,
   "keywords": [
     "vuxes",
@@ -14,10 +16,12 @@
     "framework",
     "xes"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XES-NEW-CLASS/vuxes.git"
+  },
   "files": [
-    "lib",
-    "src",
-    "packages"
+    "lib"
   ],
   "scripts": {
     "cli": "./build/cli.sh",
@@ -38,6 +42,7 @@
     "test:jest": "vue-cli-service test:unit --watchAll",
     "test:cov": "vue-cli-service test:unit --coverage"
   },
+  "prepublishOnly": "npm run publish:lib",
   "dependencies": {
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
