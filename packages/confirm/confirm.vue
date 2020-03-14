@@ -1,7 +1,9 @@
 <template>
   <div class="x-confirm"
-       v-if="isShow">
-    <div class="x-confirm_box">
+       v-if="isShow"
+       @click="cancel()">
+    <div class="x-confirm_box"
+         @click.stop>
       <div class="x-confirm_context">
         <span class="x-confirm-title">{{text.title}}</span>
         <i class="x-icon-close x-confirm-close"
