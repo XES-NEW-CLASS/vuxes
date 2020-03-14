@@ -4,8 +4,8 @@
        :value="value">
     <div class="x-dialog-box"
          :style="{width:width}">
-      <div class="x-dialog}-top">
-        <span class="x-dialog-tips">{{title}}</span>
+      <div class="x-dialog-top">
+        <span :class="tipsType">{{title}}</span>
         <i @click="close()"
            v-show="showClose"
            class="x-icon-close x-dialog-icon"></i>
@@ -67,11 +67,31 @@ export default create({
     value: {
       type: Boolean,
       default: false
+    },
+    type: {
+      type: String,
+      default: 'center',
+      validator (val) {
+        const types = ['left', 'center']
+        return types.includes(val) || !val
+      }
     }
   },
   mounted () {
     if (this.value) {
       this.visible = true
+    }
+  },
+  computed: {
+    tipsType () {
+      const { preClass, type } = this
+      const className = [
+        `${preClass}-tips`,
+        {
+          [`${preClass}-tips-${type}`]: !!type
+        }
+      ]
+      return className
     }
   },
   methods: {

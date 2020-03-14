@@ -6,6 +6,7 @@
               @confirm="confirm"
               v-model="visible"
               v-if="visible"
+              type="center"
               :content="`<span>这是什a么鬼${num}</span>`"
               title="测试提示">
     </x-dialog>

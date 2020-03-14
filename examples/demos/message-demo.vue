@@ -1,9 +1,13 @@
 <template>
   <div class="demo-block">
-    <span class="btn" @click="message('info')">info-message</span>
-    <span class="btn" @click="message('warning')">warning-message</span>
-    <span class="btn" @click="messageError('error')">error-message</span>
-    <span class="btn" @click="message('success')">success-message</span>
+    <span class="btn"
+          @click="message('info')">info-message</span>
+    <span class="btn"
+          @click="message('warning')">warning-message</span>
+    <span class="btn"
+          @click="messageError('error')">error-message</span>
+    <span class="btn"
+          @click="message('success')">success-message</span>
   </div>
 </template>
 

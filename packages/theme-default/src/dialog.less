@@ -1,16 +1,17 @@
 @import 'common/var';
 
-.x-dialog-box{
+.x-dialog-box {
   position: relative;
   margin: 0 auto;
   background: #fff;
   border-radius: 2px;
-  box-shadow: 0 1px 3px rgba(0,0,0,.3);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
   box-sizing: border-box;
   min-height: 200px;
   z-index: 1000;
 }
-.x-dialog-mask{
+
+.x-dialog-mask {
   width: 100%;
   height: 100%;
   position: fixed;
@@ -18,48 +19,71 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0,0,0,.3);
+  background: rgba(0, 0, 0, .3);
   z-index: 999;
 }
-.x-dialog-tips{
+
+.x-dialog-tips {
   display: inline-block;
   width: 100%;
-  text-align: center;
   margin-top: 10px;
   font-size: 18px;
   color: #303133;
 }
-.x-dialog-icon{
-  font-size: 16px!important;
+
+.x-dialog-tips-left {
+  text-align: left;
+  margin-left: 18px;
+}
+
+.x-dialog-tips-center {
+  text-align: center;
+}
+
+.x-dialog-icon {
+  font-size: 16px !important;
   position: absolute;
   right: 0;
   top: 15px;
   cursor: pointer;
-  &:hover{
-    color:@--color-primary
+
+  &:hover {
+    color: @--color-primary
   }
 }
-.x-dialog-content{
+
+.x-dialog-content {
   min-height: 60px;
   max-height: 70px;
   padding: 20px 20px;
 }
-.x-dialog-bottom{
+
+.x-dialog-bottom {
   display: flex;
-  flex-direction:row;
+  flex-direction: row;
   justify-content: center;
 }
-.x-dialog-bottom_left,.x-dialog-bottom_right{
+
+.x-dialog-bottom_left,
+.x-dialog-bottom_right {
   padding: 5px 15px;
   text-align: center;
-  border: 1px solid @--color-text-placeholder;
   border-radius: 5px;
   cursor: pointer;
-  &:hover{
+}
+
+.x-dialog-bottom_left {
+  border: 1px solid @--color-text-placeholder;
+
+  &:hover {
     border: 1px solid @--color-primary;
-    color:@--color-primary;
+    color: @--color-primary;
   }
 }
-.x-dialog-bottom_right{
+
+.x-dialog-bottom_right {
   margin-left: 30px;
+  background-color: @--color-primary;
+  color: @--color-white;
+  border: 1px solid @--color-primary;
 }
