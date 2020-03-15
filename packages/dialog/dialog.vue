@@ -10,10 +10,11 @@
            v-show="showClose"
            class="x-icon-close x-dialog-icon"></i>
       </div>
-      <div class="x-dialog-content"
-           v-html="content">
+      <div class="x-dialog-content">
+        <slot name="content"></slot>
       </div>
       <div class="x-dialog-bottom">
+        <slot name="dialog-bottom"></slot>
         <div class="x-dialog-bottom_left"
              @click="cancel()">{{isCancelText}}</div>
         <div class="x-dialog-bottom_right"
@@ -47,10 +48,6 @@ export default create({
     isMask: {
       type: Boolean,
       default: true
-    },
-    content: {
-      type: String,
-      default: '呵呵'
     },
     showClose: {
       type: Boolean,

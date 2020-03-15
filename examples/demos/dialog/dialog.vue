@@ -4,11 +4,15 @@
               @open="open"
               @cancel="cancel"
               @confirm="confirm"
+              isCancelText="否"
+              isConfirmText="是"
               v-model="visible"
               v-if="visible"
               type="center"
-              :content="`<span>这是什a么鬼${num}</span>`"
               title="测试提示">
+      <div slot="content">
+        <span>确认要关闭嘛？</span>
+      </div>
     </x-dialog>
     <span class="btn"
           @click="openDialog()">打开dialog组件</span>

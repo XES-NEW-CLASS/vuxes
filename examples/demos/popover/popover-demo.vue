@@ -15,6 +15,7 @@
       trigger="click"
       placement="bottom-end"
     >
+    <span>testaaaaaa</span>
       <x-button slot="reference">click 激活</x-button>
     </x-popover>
     <x-popover
