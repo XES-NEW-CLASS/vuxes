@@ -11,7 +11,7 @@
               type="center"
               title="测试提示">
       <div slot="content">
-        <span>确认要关闭嘛？{{num}}</span>
+        <span>确认要关闭嘛？</span>
       </div>
     </x-dialog>
     <span class="btn"
@@ -24,8 +24,7 @@ export default {
   name: 'x-dialog-demo',
   data () {
     return {
-      visible: false,
-      num: 5
+      visible: false
     }
   },
   methods: {
@@ -46,21 +45,6 @@ export default {
     confirm () {
       this.visible = false
       console.log('confirm回调')
-    }
-  },
-  watch: {
-    visible (val) {
-      if (val) {
-        this.timer = setInterval(() => {
-          this.num--
-        }, 1000)
-      }
-    },
-    num (val) {
-      if (val <= 1) {
-        clearInterval(this.timer)
-        this.visible = false
-      }
     }
   }
 }
