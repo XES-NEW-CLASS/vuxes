@@ -23,7 +23,6 @@ inquirer.prompt([{
   message: '版本发布说明',
   default: ''
 }]).then(answers => {
-  console.log(answers)
   const version = answers.version
   const commitMessage = `"chore(package.json): update version to ${version}"`
 
@@ -35,9 +34,7 @@ inquirer.prompt([{
     git commit -m ${commitMessage} &&
     git push &&
     git push origin --tags &&
-    git checkout master &&
-    git merge release &&
-    git push &&
+    npm run build:lib &&
     npm publish
   `
 
