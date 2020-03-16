@@ -28,7 +28,6 @@ inquirer.prompt([{
     value: 'dev'
   }]
 }]).then(answers => {
-  console.log(answers)
   shell.exec(SCRIPT_OPT_MAP[answers.option])
 })
 
