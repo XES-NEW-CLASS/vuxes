@@ -21,8 +21,12 @@ this.$confirm({
 
 <x-confirm-demo></x-confirm-demo>
 
-## Attributes
+## Options
 
 | 参数 | 说明 | 类型   | 可选值 | 默认值 |
 | ---- | ---- | ------ | ------ | ------ |
-| text | 类型 | object | {}     |
+| title | 提示标题 | String | -  | - |
+| msg | 提示内容 | String | -  | - |
+| submit | 确认按钮文案 | String | -  | - |
+| cancel | 取消按钮文案 | String | -  | - |
+
