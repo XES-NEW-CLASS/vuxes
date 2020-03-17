@@ -125,6 +125,11 @@
     padding: @--button-padding-vertical;
   }
 
+  &.is-long {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   &--primary {
     .button-variant(@--button-primary-font-color, @--button-primary-background-color, @--button-primary-border-color);
   }
@@ -141,6 +146,12 @@
     .button-variant(@--button-info-font-color, @--button-info-background-color, @--button-info-border-color);
   }
 
+  &--large {
+    .button-size(@--button-large-padding-vertical, @--button-large-padding-horizontal, @--button-large-font-size, @--button-large-border-radius);
+    &.is-circle {
+      padding: @--button-large-padding-vertical;
+    }
+  }
   &--medium {
     .button-size(@--button-medium-padding-vertical, @--button-medium-padding-horizontal, @--button-medium-font-size, @--button-medium-border-radius);
     &.is-circle {
@@ -255,12 +266,7 @@
     }
   }
 
-  .x-button--(@type) when (@type = primary),
-                                          (@type = success),
-                                          (@type = warning),
-                                          (@type = danger),
-                                          (@type = info)
-  {
+  .x-button--primary, .x-button--success, .x-button--warning, .x-button--danger, .x-button--info {
     &:first-child {
       border-right-color: rgba(@--color-white, 0.5);
     }

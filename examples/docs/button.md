@@ -2,14 +2,15 @@
 
 ----
 
-## 基础用法
+通过 `x-button`标签来引用
 
-通过 `x-button`标签来引用、使用`type`、`plain`、`round`和`circle`属性来定义 Button 的样式。
+## 基础按钮
+
+使用 `type`、`plain`、`round`、`circle`、`disabled` 属性来定义 Button 的样式。
 
 <x-button-basic-demo></x-button-basic-demo>
 
 ::: demo
-
 ```html
 <div class="row">
   <x-button>默认按钮</x-button>
@@ -28,7 +29,7 @@
   <x-button type="danger" plain>危险按钮</x-button>
 </div>
 <div class="row">
-  <x-button round>朴素按钮</x-button>
+  <x-button round>圆角按钮</x-button>
   <x-button type="primary" round>主要按钮</x-button>
   <x-button type="success" round>成功按钮</x-button>
   <x-button type="info" round>信息按钮</x-button>
@@ -44,8 +45,75 @@
   <x-button type="danger" icon="x-icon-delete" circle></x-button>
 </div>
 ```
-
 :::
+
+## 文字按钮
+
+没有边框和背景色的按钮。
+
+<x-button-text-demo></x-button-text-demo>
+
+::: demo
+```html
+<x-button type="text">文字按钮</x-button>
+<x-button type="text" disabled>文字按钮</x-button>
+```
+:::
+
+## 图标按钮
+
+<x-button-icon-demo></x-button-icon-demo>
+
+::: demo
+```html
+<x-button type="primary" icon="tutor-icon-luxiang"></x-button>
+<x-button type="warning" icon="tutor-icon-jinmai"></x-button>
+<x-button type="success" icon="tutor-icon-dianzan1"></x-button>
+<x-button type="danger" icon="x-icon-search">搜索</x-button>
+<x-button type="info"><i class="x-icon-refresh-left"></i></x-button>
+```
+:::
+
+## 按钮尺寸
+
+Button 组件提供了 `mini`、`small`、`medium`、`large`，4种额外的尺寸
+
+还可以通过设置 `long` 使按钮变成长按钮
+
+<x-button-size-demo></x-button-size-demo>
+
+:::demo
+```html
+<div class="row">
+  <x-button type="primary" size="large">大型按钮</x-button>
+  <x-button>默认按钮</x-button>
+  <x-button type="success" size="medium">中等按钮</x-button>
+  <x-button type="warning" size="small">小型按钮</x-button>
+  <x-button type="info" size="mini">超小按钮</x-button>
+</div>
+<div class="row">
+  <x-button type="danger" long>长按钮</x-button>
+</div>
+```
+:::
+
+## 加载状态
+
+通过 `loading` 为 `true/false` 控制加载状态，目前只支持默认加载loading，后期版本会考虑自定义loading
+
+<x-button-loading-demo></x-button-loading-demo>
+
+:::demo
+```html
+<x-button type="primary" :loading="true">加载中</x-button>
+```
+:::
+
+## 按钮组
+
+以按钮组的方式出现，常用于多项类似操作。
+
+<x-button-group-demo></x-button-group-demo>
 
 ## Attributes
 | 参数 | 说明 | 类型   | 可选值                                           | 默认值  |
