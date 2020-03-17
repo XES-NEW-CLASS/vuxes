@@ -1,20 +1,8 @@
 <template>
   <button
-    class="x-button"
+    :class="classes"
     :disabled="disabled || loading"
     :autofocus="autofocus"
-    :class="[
-      type ? 'x-button--' + type : '',
-      size ? 'x-button--' + size : '',
-      {
-        'is-disabled': disabled,
-        'is-loading': loading,
-        'is-plain': plain,
-        'is-round': round,
-        'is-circle': circle,
-        'is-long': long
-      }
-    ]"
     @click="handle"
   >
     <i class="x-icon-loading" v-if="loading"></i>
@@ -27,32 +15,19 @@
 
 <script>
 import create from '~/utils/create-basic'
-// import { oneOf } from '~/utils/helper'
 
 export default create({
   name: 'button',
   props: {
     // 按钮类型
     type: {
-      // validator (value) {
-      //   return oneOf(value, ['primary', 'info', 'success', 'warning', 'danger'])
-      // },
       type: String,
       default: 'default'
     },
     // 按钮尺寸
-    size: {
-      // validator (value) {
-      //   return oneOf(value, ['large', 'medium', 'small', 'mini'])
-      // },
-      type: String
-      // default: 'medium'
-    },
+    size: String,
     // 按钮图标
-    icon: {
-      type: String,
-      default: ''
-    },
+    icon: String,
     // 是否加载中状态
     loading: Boolean,
     // 是否禁用状态
@@ -70,9 +45,9 @@ export default create({
   },
   computed: {
     classes () {
+      const classArr = [this.type, this.size].filter(item => !!item)
       return [
-        this.type ? 'x-button--' + this.type : '',
-        this.size ? 'x-button--' + this.size : '',
+        this.bem(classArr),
         {
           'is-disabled': this.disabled,
           'is-loading': this.loading,

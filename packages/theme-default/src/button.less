@@ -45,7 +45,7 @@
     border: 0;
   }
 
-  & [class*="x-icon-"] {
+  & [class*="@{css-prefix}icon-"] {
     & + span {
       margin-left: 5px;
     }
@@ -83,7 +83,7 @@
       border-color: @--button-disabled-border-color;
     }
 
-    &.x-button--text {
+    &--text {
       background-color: transparent;
     }
 
@@ -198,7 +198,7 @@
   }
 }
 
-.x-button-group {
+.@{btn-prefix-cls}-group {
   &::before, &::after {
     display: table;
     content: "";
@@ -209,10 +209,10 @@
   display: inline-block;
   vertical-align: middle;
 
-  & > .x-button {
+  & > .@{btn-prefix-cls} {
     float: left;
     position: relative;
-    & + .x-button {
+    & + .@{btn-prefix-cls} {
       margin-left: 0;
     }
     &.is-disabled {
@@ -258,15 +258,15 @@
     }
   }
 
-  & > .x-dropdown {
-    & > .x-button {
+  & > .@{css-prefix}dropdown {
+    & > .@{btn-prefix-cls} {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
       border-left-color: rgba(@--color-white, 0.5);
     }
   }
 
-  .x-button--primary, .x-button--success, .x-button--warning, .x-button--danger, .x-button--info {
+  .@{btn-prefix-cls}--primary, .@{btn-prefix-cls}--success, .@{btn-prefix-cls}--warning, .@{btn-prefix-cls}--danger, .@{btn-prefix-cls}--info {
     &:first-child {
       border-right-color: rgba(@--color-white, 0.5);
     }

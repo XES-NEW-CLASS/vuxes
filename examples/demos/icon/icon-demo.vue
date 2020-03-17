@@ -1,11 +1,10 @@
 <template>
   <div class="icon-wrapper">
     <ul class="icon-list">
-      <li v-for="name in $icon"
-          :key="name">
+      <li v-for="name in $icon" :key="name">
         <span>
           <i :class="'x-icon-' + name"></i>
-          <span class="icon-name">{{'x-icon-' + name}}</span>
+          <span class="icon-name">{{ 'x-icon-' + name }}</span>
         </span>
       </li>
     </ul>
