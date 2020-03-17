@@ -58,7 +58,7 @@
 
 <script>
 export default {
-  name: 'x-button-demo'
+  name: 'x-button-disable-demo'
 }
 </script>
 

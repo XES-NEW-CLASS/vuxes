@@ -120,6 +120,19 @@ export default {
   .hljs {
     padding: 0;
   }
+
+  .description {
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #666;
+    word-break: break-word;
+    margin: 10px;
+    background-color: #fff;
+  }
 }
 
 .docs-demo.docs-demo--expand .highlight-wrapper {
