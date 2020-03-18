@@ -3,3 +3,14 @@
   -webkit-user-select: @value;
   -ms-user-select: @value;
 }
+
+.utils-clearfix {
+  display: block;
+  &:after {
+    content: '';
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}

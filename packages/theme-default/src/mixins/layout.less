@@ -1,0 +1,31 @@
+.res(@size) when (isstring@size) {
+  @prefix: 'x-col-@{size}'
+}
+
+.res(@size) when not (isstring@size) {
+  @prefix: 'x-col'
+}
+
+.loop(@index, @size) when (@index > 0) {
+  .res(@size);
+
+  .@{prefix}-@{index} {
+    width: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefix}-offset-@{index} {
+    margin-left: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefix}-pull-@{index} {
+    position: relative;
+    right: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefix}-push-@{index} {
+    position: relative;
+    left: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .loop(@index - 1);
+}
