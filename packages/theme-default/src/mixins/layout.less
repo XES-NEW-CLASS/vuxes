@@ -1,13 +1,15 @@
-.res(@size) when (isstring@size) {
-  @prefix: 'x-col-@{size}'
+.res(@size) when (@size=def) {
+  @prefix: ~'x-col';
+  .loop(24)
 }
 
-.res(@size) when not (isstring@size) {
-  @prefix: 'x-col'
+.res(@size) when not (@size=def) {
+  @prefix: ~'x-col-@{size}';
+  .loop(24)
 }
 
-.loop(@index, @size) when (@index > 0) {
-  .res(@size);
+.loop(@index) when (@index > 0) {
+  @prefix: ~'x-col';
 
   .@{prefix}-@{index} {
     width: (1 / 24 * @index * 100) * 1%;

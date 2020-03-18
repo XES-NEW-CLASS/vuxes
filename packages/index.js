@@ -2,15 +2,19 @@
 // This file is auto gererated by build/build-entry.js
 import Button from './button'
 import ButtonGroup from './button-group'
+import Col from './col'
 import Message from './message'
 import MessageTest from './message-test'
 import Popover from './popover'
+import Row from './row'
 import Tooltip from './tooltip'
 const version = '0.0.1'
 const components = [
   Button,
   ButtonGroup,
+  Col,
   Popover,
+  Row,
   Tooltip
 ]
 const install = Vue => {
@@ -30,9 +34,11 @@ export {
   version,
   Button,
   ButtonGroup,
+  Col,
   Message,
   MessageTest,
   Popover,
+  Row,
   Tooltip
 }
 export default {

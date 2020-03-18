@@ -2,7 +2,7 @@ import create from '~/utils/create-basic'
 
 export default create({
   name: 'row',
-  componentName: 'row',
+  componentName: 'x-row',
   props: {
     // 自定义元素标签
     tag: {

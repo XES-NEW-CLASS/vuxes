@@ -34,7 +34,7 @@ export default create({
   computed: {
     gutter () {
       let parent = this.$parent
-      while (parent && parent.$options.componentName !== 'row') {
+      while (parent && parent.$options.componentName !== 'x-row') {
         parent = parent.$parent
       }
       return parent ? parent.gutter : 0
