@@ -1,6 +1,6 @@
 {
   "name": "vuxes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "学而思新课堂Vue组件库",
   "main": "lib/index.umd.js",
   "unpkg": "lib/index.umd.min.js",
