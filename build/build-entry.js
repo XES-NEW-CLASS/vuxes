@@ -15,9 +15,13 @@ function buildPackagesEntry () {
   // 不挂载的组件列表
   const uninstallComponents = ['Message']
 
-  const importList = Components.map(
-    name => `import ${uppercamelize(name)} from './${name}'`
-  )
+  const importList = Components.map(name => {
+    const importModules = `import ${uppercamelize(name)} from './${name}'`
+      if (name === 'loading') {
+        return `${importModules} \nimport { loadingDirective } from './${name}'`
+      }
+      return importModules
+  })
   const exportList = Components.map(name => `${uppercamelize(name)}`)
   const installList = exportList.filter(
     name => !~uninstallComponents.indexOf(uppercamelize(name))
@@ -31,9 +35,9 @@ const components = [
 const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
-
     Vue.prototype.$messageTest = MessageTest
   })
+  Vue.use(loadingDirective)
 };
 
 if (typeof window !== 'undefined' && window.Vue) {

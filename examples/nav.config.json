@@ -72,6 +72,16 @@
       ]
     },
     {
+      "desc": "通知",
+      "children": [
+        {
+          "desc": "Loading加载",
+          "name": "loading",
+          "path": "loading"
+        }
+      ]
+    },
+    {
       "desc": "视图",
       "children": [
         {

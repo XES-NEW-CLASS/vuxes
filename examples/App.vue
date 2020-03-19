@@ -19,7 +19,10 @@ export default {
 
 <style lang="less">
 @import './assets/style/index';
-
+html, body {
+  width: 100%;
+  height: 100%;
+}
 .header {
   position: fixed;
 }
