@@ -13,7 +13,7 @@ const tips = `/* eslint-disable */
 // 创建入口
 function buildPackagesEntry () {
   // 不挂载的组件列表
-  const uninstallComponents = ['Message']
+  const uninstallComponents = ['Message', 'MessageTest']
 
   const importList = Components.map(
     name => `import ${uppercamelize(name)} from './${name}'`
@@ -32,6 +32,7 @@ const install = Vue => {
   components.forEach(Component => {
     Vue.use(Component)
 
+    Vue.prototype.$message = Message
     Vue.prototype.$messageTest = MessageTest
   })
 };
