@@ -8,7 +8,7 @@ import MessageTest from './message-test'
 import Popover from './popover'
 import Row from './row'
 import Tooltip from './tooltip'
-const version = '0.0.1'
+const version = '0.1.0'
 const components = [
   Button,
   ButtonGroup,
