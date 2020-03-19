@@ -1,16 +1,14 @@
-.res(@size) when (@size=def) {
+.loop() {
   @prefix: ~'x-col';
-  .loop(24)
+  .while(24)
 }
 
-.res(@size) when not (@size=def) {
-  @prefix: ~'x-col-@{size}';
-  .loop(24)
+.loopExtra(@size) {
+  @prefixExt: ~'x-col-@{size}';
+  .whileExtra(24)
 }
 
-.loop(@index) when (@index > 0) {
-  @prefix: ~'x-col';
-
+.while(@index) when (@index > 0) {
   .@{prefix}-@{index} {
     width: (1 / 24 * @index * 100) * 1%;
   }
@@ -29,5 +27,27 @@
     left: (1 / 24 * @index * 100) * 1%;
   }
 
-  .loop(@index - 1);
+  .while(@index - 1);
+}
+
+.whileExtra(@index) when (@index > 0) {
+  .@{prefixExt}-@{index} {
+    width: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefixExt}-offset-@{index} {
+    margin-left: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefixExt}-pull-@{index} {
+    position: relative;
+    right: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefixExt}-push-@{index} {
+    position: relative;
+    left: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .whileExtra(@index - 1);
 }

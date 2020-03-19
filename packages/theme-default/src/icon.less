@@ -1,10 +1,12 @@
-@import "common/var";
+@import "var/index";
 @icon-prefix-cls: ~'@{css-prefix}icon';
 
 @font-face {
   font-family: 'vuxes-icons';
-  src: url('@{--font-path}/vuxes-icons.woff?v=@{--icon-version}') format('woff'), /* chrome, firefox */
-       url('@{--font-path}/vuxes-icons.ttf?v=@{--icon-version}') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  src: url('@{--font-path}/vuxes-icons.woff?v=@{--icon-version}') format('woff'),
+  /* chrome, firefox */
+  url('@{--font-path}/vuxes-icons.ttf?v=@{--icon-version}') format('truetype');
+  /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
   font-weight: normal;
   font-display: @--font-display;
   font-style: normal;
@@ -13,15 +15,18 @@
 @font-face {
   font-family: 'tutor-icons';
   src: url('@{--font-path}/tutor-icons.woff2?v=@{--icon-version}') format('woff2'),
-       url('@{--font-path}/tutor-icons.woff?v=@{--icon-version}') format('woff'),
-       url('@{--font-path}/tutor-icons.ttf?v=@{--icon-version}') format('truetype'),
-       url('@{--font-path}/tutor-icons.svg?v=@{--icon-version}#tutor-icons') format('svg');
+  url('@{--font-path}/tutor-icons.woff?v=@{--icon-version}') format('woff'),
+  url('@{--font-path}/tutor-icons.ttf?v=@{--icon-version}') format('truetype'),
+  url('@{--font-path}/tutor-icons.svg?v=@{--icon-version}#tutor-icons') format('svg');
   font-weight: normal;
   font-display: @--font-display;
   font-style: normal;
 }
 
-[class^="@{--icon-prefix}"], [class*=" @{--icon-prefix}"], [class^="tutor-icon-"], [class*=" tutor-icon-"] {
+[class^="@{--icon-prefix}"],
+[class*=" @{--icon-prefix}"],
+[class^="tutor-icon-"],
+[class*=" tutor-icon-"] {
   font-family: '@{--icon-font-family}' !important;
   speak: none;
   font-style: normal;
@@ -37,7 +42,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[class^="tutor-icon-"], [class*=" tutor-icon-"] {
+[class^="tutor-icon-"],
+[class*=" tutor-icon-"] {
   font-family: 'tutor-icons' !important;
 }
 
@@ -1170,6 +1176,7 @@
 .@{icon-prefix-cls}--right {
   margin-left: 5px;
 }
+
 .@{icon-prefix-cls}--left {
   margin-right: 5px;
 }
@@ -1471,6 +1478,7 @@
   0% {
     transform: rotateZ(0deg);
   }
+
   100% {
     transform: rotateZ(360deg);
   }

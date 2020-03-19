@@ -1,4 +1,4 @@
-@import "common/var";
+@import "var/index";
 @import "mixins/utils";
 @import "mixins/layout";
 @col-prefix-cls: ~'@{css-prefix}col';
@@ -12,20 +12,20 @@
   width: 0;
 }
 
-.res('def');
+.loop();
 
 @media (max-width: 768px) {
-  .res('xs');
+  .loopExtra('xs');
 }
 
 @media (min-width: 768px) {
-  .res('sm');
+  .loopExtra('sm');
 }
 
 @media (min-width: 992px) {
-  .res('md');
+  .loopExtra('md');
 }
 
 @media (min-width: 1200px) {
-  .res('lg');
+  .loopExtra('lg');
 }

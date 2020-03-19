@@ -15,3 +15,229 @@
 使用单一分栏创建基础的栅格布局。
 
 <x-layout-basic-demo></x-layout-basic-demo>
+
+:::demo
+```html
+<x-row>
+  <x-col :span="24"><div class="grid-content bg-purple-dark"></div></x-col>
+</x-row>
+<x-row class="m-10">
+  <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="8"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row class="m-10">
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple-light"></div></x-col>
+</x-row>
+```
+:::
+
+## 分栏间隔
+
+分栏之间存在间隔。Row 组件 提供 `gutter` 属性来指定每一栏之间的间隔，默认间隔为 0。
+
+<div class="demo-block">
+  <x-row :gutter="20">
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+</div>
+
+::: demo
+```html
+<x-row :gutter="20">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+```
+:::
+
+## 混合布局
+
+通过基础的 1/24 分栏任意扩展组合形成较为复杂的混合布局。
+
+<div class="demo-block">
+  <x-row :gutter="20">
+    <x-col :span="16"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+  <x-row :gutter="20" class="m-10">
+    <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+  <x-row :gutter="20" class="m-10">
+    <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="16"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+</div>
+
+::: demo
+```html
+<x-row :gutter="20">
+  <x-col :span="16"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row :gutter="20" class="m-10">
+  <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="8"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row :gutter="20" class="m-10">
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="16"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="4"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+```
+:::
+
+## 分栏偏移
+
+支持偏移指定的栏数。通过制定 col 组件的 `offset` 属性可以指定分栏偏移的栏数。
+
+<div class="demo-block">
+  <x-row :gutter="20">
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+  <x-row :gutter="20" class="m-10">
+    <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+  <x-row :gutter="20" class="m-10">
+    <x-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+</div>
+
+::: demo
+
+```html
+<x-row :gutter="20">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row :gutter="20" class="m-10">
+  <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row :gutter="20" class="m-10">
+  <x-col :span="12" :offset="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+```
+:::
+
+## Flex 布局
+
+通过 flex 布局来对分栏进行灵活的对齐。
+
+将 `type` 属性赋值为 `flex`，可以启用 flex 布局，并可通过 `justify` 属性来指定 `start, center, end, space-between, space-around` 其中的值来定义子元素的排版方式。
+
+<div class="demo-block">
+  <x-row type="flex" class="rox-bg">
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+  <x-row type="flex" class="rox-bg m-10" justify="center">
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+  <x-row type="flex" class="rox-bg m-10" justify="end">
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+  <x-row type="flex" class="rox-bg m-10" justify="space-between">
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+  <x-row type="flex" class="rox-bg m-10" justify="space-around">
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+    <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  </x-row>
+</div>
+
+::: demo
+```html
+<x-row type="flex" class="rox-bg">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row type="flex" class="rox-bg m-10" justify="center">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row type="flex" class="rox-bg m-10" justify="end">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row type="flex" class="rox-bg m-10" justify="space-between">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+<x-row type="flex" class="rox-bg m-10" justify="space-around">
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple-light"></div></x-col>
+  <x-col :span="6"><div class="grid-content bg-purple"></div></x-col>
+</x-row>
+```
+:::
+
+## 响应式布局
+
+参照了 Bootstrap 的 响应式设计，预设了五个响应尺寸：`xs、sm、md、lg、xl`。
+
+<div class="demo-block">
+  <x-row :gutter="10">
+    <x-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+      <div class="grid-content bg-purple"></div>
+    </x-col>
+    <x-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+      <div class="grid-content bg-purple-light"><div>
+    </x-col>
+    <x-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+      <div class="grid-content bg-purple"></div>
+    </x-col>
+    <x-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+      <div class="grid-content bg-purple-light"></div>
+    </x-col>
+  </x-row>
+</div>
+
+::: demo
+```html
+<x-row :gutter="10">
+  <x-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+    <div class="grid-content bg-purple"></div>
+  </x-col>
+  <x-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+    <div class="grid-content bg-purple-light"><div>
+  </x-col>
+  <x-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+    <div class="grid-content bg-purple"></div>
+  </x-col>
+  <x-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+    <div class="grid-content bg-purple-light"></div>
+  </x-col>
+</x-row>
+```
+:::

@@ -12,3 +12,9 @@ export default {
   name: 'x-button-text-demo'
 }
 </script>
+
+<style lang="less" scoped>
+.x-button + .x-button {
+  margin-left: 10px;
+}
+</style>

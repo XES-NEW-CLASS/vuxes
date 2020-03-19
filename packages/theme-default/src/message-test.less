@@ -1,4 +1,4 @@
-@import 'common/var';
+@import 'var/index';
 @message-prefix-cls: ~'@{css-prefix}message-test';
 
 .@{message-prefix-cls} {
@@ -13,20 +13,21 @@
   border-radius: 3px;
   pointer-events: none;
   font-family: Arial, Helvetica, sans-serif;
-  span{
+
+  span {
     font-size: 14px;
     position: relative;
     padding-left: 23px;
     display: block;
   }
 
-  i[class^=x-icon]{
+  i[class^=x-icon] {
     font-size: 16px;
     position: absolute;
     left: 0;
     top: -2px;
 
-    &.loading{
+    &.loading {
       color: @--color-info;
       animation: rotating linear 1.5s infinite;
       transform-origin: center;
@@ -34,11 +35,14 @@
   }
 }
 
-.message-move-enter-active,.message-move-leave-active{
+.message-move-enter-active,
+.message-move-leave-active {
   transition: all .2s ease;
   transform-origin: center top;
 }
-.message-move-enter,.message-move-leave-to{
+
+.message-move-enter,
+.message-move-leave-to {
   opacity: 0;
   transform: translateY(-100%);
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="demo-block">
-    <div class="x-row">
+    <x-row>
       <x-button-group>
         <x-button type="primary" icon="x-icon-arrow-left">上一页</x-button>
         <x-button type="primary">
@@ -13,7 +13,7 @@
         <x-button type="warning" icon="x-icon-share"></x-button>
         <x-button type="danger" icon="x-icon-delete"></x-button>
       </x-button-group>
-    </div>
+    </x-row>
   </div>
 </template>
 
