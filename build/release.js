@@ -29,7 +29,7 @@ inquirer.prompt([{
   const cmd = `
     git checkout release &&
     git merge dev &&
-    ${VERSION_OPT_MAP[version]} &&
+    ${VERSION_OPT_MAP[version].script} &&
     git add . &&
     git commit -m ${commitMessage} &&
     git push &&
