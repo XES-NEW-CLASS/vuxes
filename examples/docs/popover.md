@@ -68,6 +68,40 @@ export default {
 :::
 
 方式二：
+通过styleWay设置popper的不同样式
+
+<x-popover-style-demo></x-popover-style-demo>
+
+::: demo
+
+```html
+<template>
+  <div class="demo-block">
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="left"
+      styleType="dark"
+    >
+      <x-button slot="reference">hover 激活</x-button>
+    </x-popover>
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="right"
+      styleType="light"
+    >
+      <x-button slot="reference">hover 激活</x-button>
+    </x-popover>
+  </div>
+</template>
+```
+
+:::
+
+方式三：
 内嵌代码
 <x-popover-nest-demo></x-popover-nest-demo>
 
@@ -123,7 +157,7 @@ export default {
 
 :::
 
-方式三：
+方式四：
 通过指令v-popover指定popover元素
 
 <x-popover-directive-demo></x-popover-directive-demo>
@@ -180,6 +214,7 @@ export default {
 | 参数 | 说明 | 类型   | 可选值                                           | 默认值  |
 | ---- | ---- | ------ | ------------------------------------------------ | ------- |
 | trigger | 触发方式 | String | click/focus/hover/manual | click
+| styleType | popper的样式类型 | String | dark/light
 | title | 标题 | String | — | —
 | content | 显示的内容，也可以通过 slot 传入 DOM | String | — | —
 | width | 宽度 | String, Number | — | 最小宽度 150px

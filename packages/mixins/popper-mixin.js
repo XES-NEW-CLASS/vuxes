@@ -147,6 +147,9 @@ export default {
       hash && arrow.setAttribute(hash, '')
       arrow.setAttribute('x-arrow', '')
       arrow.className = 'popper__arrow'
+      if (this.styleType) {
+        arrow.className += (' popper__arrow--' + this.styleType)
+      }
       target.appendChild(arrow)
     },
     // 销毁popper

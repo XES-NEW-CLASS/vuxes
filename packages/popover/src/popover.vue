@@ -4,7 +4,12 @@
                 @after-enter="handleAfterEnter"
                 @after-leave="handleAfterLeave">
       <div class="x-popper"
-           :class="[bem(), popperClass, content && bem(['plain'])]"
+           :class="[
+             bem(),
+             content && bem(['plain']),
+             styleType === 'dark' ? bem(['dark']) : bem(['light']),
+             popperClass
+           ]"
            ref="popper"
            v-show="!disabled && showPopper"
            :style="{ width: width + 'px', left: '100px' }"
@@ -42,6 +47,11 @@ export default create({
     transition: { // 样式过度
       type: String,
       default: 'fade-in-linear'
+    },
+    styleType: { // 样式类型
+      type: String,
+      default: 'dark',
+      validator: value => ['dark', 'light'].indexOf(value) >= 0
     },
     popperClass: String, // 为 popper 添加类名
     content: String, // 显示的内容
