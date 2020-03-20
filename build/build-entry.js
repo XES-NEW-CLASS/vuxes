@@ -17,10 +17,10 @@ function buildPackagesEntry () {
 
   const importList = Components.map(name => {
     const importModules = `import ${uppercamelize(name)} from './${name}'`
-      if (name === 'loading') {
-        return `${importModules} \nimport { loadingDirective, loadingServer as xLoading } from './${name}'`
-      }
-      return importModules
+    if (name === 'loading') {
+      return `${importModules} \nimport { loadingDirective, loadingServer as xLoading } from './${name}'`
+    }
+    return importModules
   })
   const exportList = Components.map(name => `${uppercamelize(name)}`)
   const installList = exportList.filter(
