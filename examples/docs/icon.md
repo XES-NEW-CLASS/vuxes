@@ -9,8 +9,10 @@
 直接通过设置类名为 `x-icon-iconName` 或者 `tutor-icon-iconName` 来使用即可。例如：
 
 <div class="demo-block">
-  <i class="tutor-icon-ArrowRight"></i>
-  <i class="x-icon-delete"></i>
+  <p class="icon-box">
+    <i class="tutor-icon-ArrowRight"></i>
+    <i class="x-icon-delete"></i>
+  </p>
 </div>
 
 ::: demo

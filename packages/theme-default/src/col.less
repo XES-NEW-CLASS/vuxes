@@ -1,0 +1,31 @@
+@import "var/index";
+@import "mixins/utils";
+@import "mixins/layout";
+@col-prefix-cls: ~'@{css-prefix}col';
+
+[class*="@{css-prefix}col-"] {
+  float: left;
+  box-sizing: border-box;
+}
+
+.@{css-prefix}col-0 {
+  width: 0;
+}
+
+.loop();
+
+@media (max-width: 768px) {
+  .loopExtra('xs');
+}
+
+@media (min-width: 768px) {
+  .loopExtra('sm');
+}
+
+@media (min-width: 992px) {
+  .loopExtra('md');
+}
+
+@media (min-width: 1200px) {
+  .loopExtra('lg');
+}
