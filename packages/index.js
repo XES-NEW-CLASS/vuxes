@@ -3,6 +3,8 @@
 import Button from './button'
 import ButtonGroup from './button-group'
 import Col from './col'
+import Loading from './loading' 
+import { loadingDirective, loadingServer as xLoading } from './loading'
 import Message from './message'
 import MessageTest from './message-test'
 import Popover from './popover'
@@ -13,6 +15,7 @@ const components = [
   Button,
   ButtonGroup,
   Col,
+  Loading,
   Popover,
   Row,
   Tooltip
@@ -24,6 +27,8 @@ const install = Vue => {
     Vue.prototype.$message = Message
     Vue.prototype.$messageTest = MessageTest
   })
+  Vue.use(loadingDirective)
+  Vue.prototype.$loading = xLoading
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -32,9 +37,11 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
+  xLoading,
   Button,
   ButtonGroup,
   Col,
+  Loading,
   Message,
   MessageTest,
   Popover,
