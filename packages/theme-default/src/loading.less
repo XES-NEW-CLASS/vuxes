@@ -32,7 +32,7 @@
     font-size: 14px;
   }
   i {
-    width: 50px;
+    width: 100%;
     height: 50px;
     line-height: 50px;
     display: block;
@@ -53,10 +53,15 @@
   overflow: hidden;
 }
 
+.@{loading-prefix-cls}__transition-enter-active,
+.@{loading-prefix-cls}__transition-leave-active {
+  transition: all 0.3s ease;
+}
+
 .@{loading-prefix-cls}__transition-enter,
 .@{loading-prefix-cls}__transition-leave-active {
   opacity: 0;
-}
+} 
 
 .@{loading-prefix-cls}__dark {
   .@{loading-prefix-cls}__iconbox {

@@ -18,11 +18,13 @@ function dealBindingTask (el, binding) {
     }
     el.originalVueObject.visible = true
   } else {
-    if (binding.modifiers.body) {
-      removeClass(el.mask, 'x-loading__maskbody')
-    }
-    removeClass(el, 'x-loading__maskelement')
-    removeClass(el, 'x-loading__hidden')
+    setTimeout(() => {
+      if (binding.modifiers.body) {
+        removeClass(el.mask, 'x-loading__maskbody')
+      }
+      removeClass(el, 'x-loading__maskelement')
+      removeClass(el, 'x-loading__hidden')
+    }, 300)
     el.originalVueObject.visible = false
   }
 }

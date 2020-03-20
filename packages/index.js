@@ -2,12 +2,12 @@
 // This file is auto gererated by build/build-entry.js
 import Button from './button'
 import Loading from './loading' 
-import { loadingDirective } from './loading'
+import { loadingDirective, loadingServer as xLoading } from './loading'
 import Message from './message'
 import MessageTest from './message-test'
 import Popover from './popover'
 import Tooltip from './tooltip'
-const version = '0.0.1'
+const version = '0.0.2'
 const components = [
   Button,
   Loading,
@@ -21,6 +21,7 @@ const install = Vue => {
     Vue.prototype.$messageTest = MessageTest
   })
   Vue.use(loadingDirective)
+  Vue.prototype.$loading = xLoading
 };
 
 if (typeof window !== 'undefined' && window.Vue) {
@@ -29,6 +30,7 @@ if (typeof window !== 'undefined' && window.Vue) {
 export {
   install,
   version,
+  xLoading,
   Button,
   Loading,
   Message,

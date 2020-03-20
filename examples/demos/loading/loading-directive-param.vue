@@ -7,7 +7,7 @@
     x-loading-addClass="loading-addclass"
     class="x-loading-demowrap"
   >
-    loading组件课配置参数说明
+    loading组件可配置参数说明
   </div>
 </template>
 

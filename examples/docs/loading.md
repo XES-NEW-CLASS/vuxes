@@ -106,3 +106,98 @@ export default {
 ```
 
 :::
+
+## 自定义时机整页加载
+
+<x-loading-server></x-loading-server>
+
+::: demo
+<br/>
+
+自定义加载目的是为了处理加载时机问题，在需要初始化页面，加载异步事件等操作的时候可以使用该方式。挂载在`vue`对象上，挂载名为`$loading`。
+
+----
+
+```xml
+<template>
+  <div
+    class="x-loading-demowrap"
+  >
+    <span @click="showLoading">
+      <x-button type="success">点击显示loading</x-button>
+    </span>
+    <span @click="showLoadingOption">
+      <x-button class="ml-10"
+                type="success">点击显示自定义loading</x-button>
+    </span>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'x-loading-server',
+  methods: {
+    showLoading () {
+      const loadingFun = this.$loading()
+      setTimeout(() => {
+        loadingFun.close()
+      }, 3000)
+    },
+    showLoadingOption () {
+      const loadingFun = this.$loading({
+        text: '加载中...',
+        icon: 'x-icon-refresh-right',
+        theme: 'dark',
+        addClass: 'my-add',
+        lock: true
+      })
+      setTimeout(() => {
+        loadingFun.close()
+      }, 3000)
+    }
+  }
+}
+</script>
+
+<style lang="less" scoped>
+.x-loading-demowrap {
+  width: 100%;
+  height: 200px;
+  background: #efefef;
+}
+</style>
+```
+
+:::
+
+## js方式操作加载
+
+<br/>
+
+js方式的加载可以使用在任何js浏览器环境中，可以脱离vue的束缚，但是和指令方式一样，该方式只支持全局加载，目前不提供局部加载的处理方式。
+
+----
+
+使用方式：
+
+```js
+import { xLoading } from 'vuxes'
+```
+
+在调用的时候：
+
+```js
+xLoading(options)
+```
+
+由于`xLoading`和`$loading`是一个对象。所以用法上也是一致的，可以使用`close`方法来关闭。下表列出了具体的参数说明。
+
+## Options
+
+| 参数 | 说明 | 类型   | 可选值                                           | 默认值  |
+| ---- | ---- | ------ | ------------------------------------------------ | ------- |
+| text | 加载文案 | string | -- | null |
+| icon | 加载icon图标 | string | x-icon-refresh-right等 | tutor-icon-shuaxin |
+| theme | loading色调 | string | `light`，`dark` | light |
+| addClass | loading组件添加的class，方便控制 | string | -- | -- |
+| lock | 加载时是否禁止滚动 | boolean | `true`，`false` | false |
