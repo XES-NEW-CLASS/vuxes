@@ -1,16 +1,18 @@
 import Toast from './message.vue'
 import { isString, isNumber, isBoolean, isObject } from '~/utils/data-type'
 import create from '~/utils/create-prototype'
-
 const instances = []
 let num = 1
-const createMessage = (options, msgType) => {
-  // 创建message实例
+const Message = (options) => {
   options = options || {}
-  if (options === '' || (isObject(options) && options.message === '')) return
+  if (typeof options === 'string') {
+    options = {
+      message: options
+    }
+  }
   const props = {
     message: isObject(options) ? options.message : options,
-    type: msgType || 'default',
+    type: isObject(options) ? options.type : '',
     duration: isNumber(options.duration) ? options.duration : 2000,
     isIconShow: isBoolean(options.isIconShow) ? options.isIconShow : true,
     fontColor: isString(options.fontColor) ? options.fontColor : '#fff',
@@ -28,20 +30,24 @@ const createMessage = (options, msgType) => {
   message.domId = domId
   instances.push(message)
   message.onClose = () => {
-    closeMsg(domId)
+    close(domId)
   }
   return message
 }
-
-// 扩展方法
 const methods = Toast.data().msgType
-const Message = {}
-methods.forEach(type => {
-  Message[type] = options => createMessage(options, type)
-})
 
-// close方法
-const closeMsg = domId => {
+methods.forEach(type => {
+  Message[type] = options => {
+    if (typeof options === 'string') {
+      options = {
+        message: options
+      }
+    }
+    options.type = type
+    return Message(options)
+  }
+})
+const close = domId => {
   let removeHeight
   instances.forEach((item, index) => {
     if (item.domId === domId) {
@@ -54,4 +60,10 @@ const closeMsg = domId => {
       parseInt(item.$el.style.top, 10) - removeHeight - 16 + 'px'
   })
 }
+Message.closeAll = () => {
+  instances.forEach(item => {
+    item.close()
+  })
+}
+
 export default Message
