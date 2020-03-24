@@ -5,7 +5,7 @@ const instances = []
 let num = 1
 const Message = (options) => {
   options = options || {}
-  if (typeof options === 'string') {
+  if (isString(options)) {
     options = {
       message: options
     }
@@ -38,7 +38,7 @@ const methods = Toast.data().msgType
 
 methods.forEach(type => {
   Message[type] = options => {
-    if (typeof options === 'string') {
+    if (isString(options)) {
       options = {
         message: options
       }
