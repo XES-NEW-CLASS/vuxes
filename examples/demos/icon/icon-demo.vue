@@ -1,11 +1,10 @@
 <template>
   <div class="icon-wrapper">
     <ul class="icon-list">
-      <li v-for="name in $icon"
-          :key="name">
+      <li v-for="name in $icon" :key="name">
         <span>
           <i :class="'x-icon-' + name"></i>
-          <span class="icon-name">{{'x-icon-' + name}}</span>
+          <span class="icon-name">{{ 'x-icon-' + name }}</span>
         </span>
       </li>
     </ul>
@@ -35,7 +34,7 @@ export default {
   height: 120px;
   line-height: 120px;
   color: #666;
-  font-size: 13px;
+  font-size: 12px;
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
   margin-right: -1px;
@@ -61,7 +60,7 @@ export default {
 
   i {
     display: block;
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 15px;
     color: #606266;
     transition: color 0.15s linear;

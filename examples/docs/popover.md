@@ -1,31 +1,211 @@
-# Button 按钮
+# Popover 组件
 
 ----
 
 ## 基础用法
 
 方式一：
-通过 `x-popover`标签来引用
+通过 `x-popover`标签来引用，有4种触发方式
 
 <x-popover-base-demo></x-popover-base-demo>
 
 ::: demo
 
 ```html
-待写
+<template>
+  <div class="demo-block">
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="right"
+      :appendToBody="false"
+    >
+      <x-button slot="reference">hover 激活</x-button>
+    </x-popover>
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="click"
+      placement="bottom-end"
+    >
+      <x-button slot="reference">click 激活</x-button>
+    </x-popover>
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="focus"
+      plcement="right"
+    >
+      <x-button slot="reference">focus 激活</x-button>
+    </x-popover>
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="manual"
+      placement="top-end"
+      v-model="isShowManualPopper"
+    >
+      <x-button slot="reference" @click="changeManualStatus">manual 激活</x-button>
+    </x-popover>
+  </div>
+</template>
+
+export default {
+  data () {
+    return {
+      isShowManualPopper: false
+    }
+  },
+  methods: {
+    changeManualStatus () {
+      this.isShowManualPopper = !this.isShowManualPopper
+    }
+  }
+}
 ```
 
 :::
 
 方式二：
-内嵌代码
+通过styleWay设置popper的不同样式
 
+<x-popover-style-demo></x-popover-style-demo>
+
+::: demo
+
+```html
+<template>
+  <div class="demo-block">
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="left"
+      styleType="dark"
+    >
+      <x-button slot="reference">hover 激活</x-button>
+    </x-popover>
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="right"
+      styleType="light"
+    >
+      <x-button slot="reference">hover 激活</x-button>
+    </x-popover>
+  </div>
+</template>
+```
+
+:::
+
+方式三：
+内嵌代码
 <x-popover-nest-demo></x-popover-nest-demo>
 
 ::: demo
 
 ```html
-待写
+<template>
+  <div class="demo-block">
+    <x-popover>
+      <table border cellspacing="0">
+        <tr>
+          <th>日期</th>
+          <th>姓名</th>
+          <th>地址</th>
+        </tr>
+        <tr v-for="(trData, i) in gridData" :key="'tr_' + i">
+          <td>{{ trData.date }}</td>
+          <td>{{ trData.name }}</td>
+          <td>{{ trData.address }}</td>
+        </tr>
+      </table>
+      <input type="text" slot="reference" />
+    </x-popover>
+  </div>
+</template>
+
+export default {
+  name: 'x-popover-nest-demo',
+  data () {
+    return {
+      gridData: [{
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-03',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }]
+    }
+  }
+}
+
+```
+
+:::
+
+方式四：
+通过指令v-popover指定popover元素
+
+<x-popover-directive-demo></x-popover-directive-demo>
+
+::: demo
+
+```html
+<template>
+  <div class="demo-block">
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="top-start"
+      ref="myPopover"
+    ></x-popover>
+    <x-button v-popover:myPopover>hover 激活</x-button>
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="hover"
+      placement="right"
+      ref="myPopover2"
+    ></x-popover>
+    <x-button v-popover="'myPopover2'">hover 激活</x-button>
+    <x-popover
+      title="测试用"
+      content="测试文案"
+      trigger="click"
+      placement="right"
+      ref="myPopover3"
+    ></x-popover>
+    <x-button v-popover="myPopoverRef">click 激活</x-button>
+  </div>
+</template>
+
+export default {
+  name: 'x-popover-directive-demo',
+  data () {
+    return {
+      myPopoverRef: null
+    }
+  },
+  mounted () {
+    this.myPopoverRef = this.$refs.myPopover3
+  }
+}
+
 ```
 
 :::
@@ -34,6 +214,7 @@
 | 参数 | 说明 | 类型   | 可选值                                           | 默认值  |
 | ---- | ---- | ------ | ------------------------------------------------ | ------- |
 | trigger | 触发方式 | String | click/focus/hover/manual | click
+| styleType | popper的样式类型 | String | dark/light
 | title | 标题 | String | — | —
 | content | 显示的内容，也可以通过 slot 传入 DOM | String | — | —
 | width | 宽度 | String, Number | — | 最小宽度 150px

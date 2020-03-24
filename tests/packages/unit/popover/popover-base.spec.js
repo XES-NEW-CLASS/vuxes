@@ -1,6 +1,6 @@
 import { findOneDom, findAllDom, createVue, createElm, triggerEvent } from '../../../jestUtils/dom'
 
-import Popover from '~/popover/popover'
+import Popover from '~/popover/src/popover'
 
 const popoverTemplete = ({ trigger }) => {
   if (trigger !== 'manual') {
@@ -23,7 +23,6 @@ const popoverTemplete = ({ trigger }) => {
       methods: {
         changePopoverStatus () {
           this.isShow = !this.isShow
-          console.log('isShow: ', this.isShow)
         }
       },
       template: `

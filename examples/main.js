@@ -20,8 +20,6 @@ function importDemos (r) {
   })
 }
 importDemos(require.context('@/demos', true, /\.vue$/))
-
-console.log('main.js: ', Demos)
 Demos.map(component => Vue.component(component.name, component))
 
 Vue.prototype.$icon = icon // Icon 列表页用

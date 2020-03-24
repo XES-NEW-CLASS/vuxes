@@ -1,0 +1,53 @@
+.loop() {
+  @prefix: ~'x-col';
+  .while(24)
+}
+
+.loopExtra(@size) {
+  @prefixExt: ~'x-col-@{size}';
+  .whileExtra(24)
+}
+
+.while(@index) when (@index > 0) {
+  .@{prefix}-@{index} {
+    width: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefix}-offset-@{index} {
+    margin-left: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefix}-pull-@{index} {
+    position: relative;
+    right: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefix}-push-@{index} {
+    position: relative;
+    left: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .while(@index - 1);
+}
+
+.whileExtra(@index) when (@index > 0) {
+  .@{prefixExt}-@{index} {
+    width: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefixExt}-offset-@{index} {
+    margin-left: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefixExt}-pull-@{index} {
+    position: relative;
+    right: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .@{prefixExt}-push-@{index} {
+    position: relative;
+    left: (1 / 24 * @index * 100) * 1%;
+  }
+
+  .whileExtra(@index - 1);
+}

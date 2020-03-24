@@ -1,0 +1,161 @@
+/* cls prefix
+-------------------------- */
+@css-prefix: 'x-';
+
+/* Color
+-------------------------- */
+/// color|1|Brand Color|0
+@--color-primary: #409eff;
+/// color|1|Background Color|4
+@--color-white: #ffffff;
+/// color|1|Background Color|4
+@--color-black: #000000;
+@--color-primary-light-1: mix(@--color-white, @--color-primary, 10%);
+/* 53a8ff */
+@--color-primary-light-2: mix(@--color-white, @--color-primary, 20%);
+/* 66b1ff */
+@--color-primary-light-3: mix(@--color-white, @--color-primary, 30%);
+/* 79bbff */
+@--color-primary-light-4: mix(@--color-white, @--color-primary, 40%);
+/* 8cc5ff */
+@--color-primary-light-5: mix(@--color-white, @--color-primary, 50%);
+/* a0cfff */
+@--color-primary-light-6: mix(@--color-white, @--color-primary, 60%);
+/* b3d8ff */
+@--color-primary-light-7: mix(@--color-white, @--color-primary, 70%);
+/* c6e2ff */
+@--color-primary-light-8: mix(@--color-white, @--color-primary, 80%);
+/* d9ecff */
+@--color-primary-light-9: mix(@--color-white, @--color-primary, 90%);
+/* ecf5ff */
+/// color|1|Functional Color|1
+@--color-success: #67c23a;
+/// color|1|Functional Color|1
+@--color-warning: #e6a23c;
+/// color|1|Functional Color|1
+@--color-danger: #f56c6c;
+/// color|1|Functional Color|1
+@--color-info: #909399;
+
+@--color-success-light: mix(@--color-white, @--color-success, 80%);
+@--color-warning-light: mix(@--color-white, @--color-warning, 80%);
+@--color-danger-light: mix(@--color-white, @--color-danger, 80%);
+@--color-info-light: mix(@--color-white, @--color-info, 80%);
+
+@--color-success-lighter: mix(@--color-white, @--color-success, 90%);
+@--color-warning-lighter: mix(@--color-white, @--color-warning, 90%);
+@--color-danger-lighter: mix(@--color-white, @--color-danger, 90%);
+@--color-info-lighter: mix(@--color-white, @--color-info, 90%);
+/// color|1|Font Color|2
+@--color-text-primary: #303133;
+/// color|1|Font Color|2
+@--color-text-regular: #606266;
+/// color|1|Font Color|2
+@--color-text-secondary: #909399;
+/// color|1|Font Color|2
+@--color-text-placeholder: #c0c4cc;
+/// color|1|Font Color|2
+@--color-text-light: #e4e7ed;
+/// color|1|Border Color|3
+@--border-color-base: #dcdfe6;
+/// color|1|Border Color|3
+@--border-color-light: #e4e7ed;
+/// color|1|Border Color|3
+@--border-color-lighter: #ebeef5;
+/// color|1|Border Color|3
+@--border-color-extra-light: #f2f6fc;
+
+// Background
+/// color|1|Background Color|4
+@--background-color-base: #f5f7fa;
+
+/* Link
+-------------------------- */
+@--link-color: @--color-primary-light-2;
+@--link-hover-color: @--color-primary;
+
+/* Border
+-------------------------- */
+@--border-width-base: 1px;
+@--border-style-base: solid;
+@--border-color-hover: @--color-text-placeholder;
+@--border-base: @--border-width-base @--border-style-base @--border-color-base;
+/// borderRadius|1|Radius|0
+@--border-radius-base: 4px;
+/// borderRadius|1|Radius|0
+@--border-radius-small: 2px;
+/// borderRadius|1|Radius|0
+@--border-radius-circle: 100%;
+/// borderRadius|1|Radius|0
+@--border-radius-zero: 0;
+
+// Box-shadow
+/// boxShadow|1|Shadow|1
+@--box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+// boxShadow|1|Shadow|1
+@--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12);
+/// boxShadow|1|Shadow|1
+@--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+/* Fill
+-------------------------- */
+@--fill-base: @--color-white;
+
+/* Typography
+-------------------------- */
+@--font-path: 'fonts';
+@--font-display: 'auto';
+/// fontSize|1|Font Size|0
+@--font-size-extra-large: 20px;
+/// fontSize|1|Font Size|0
+@--font-size-large: 18px;
+/// fontSize|1|Font Size|0
+@--font-size-medium: 16px;
+/// fontSize|1|Font Size|0
+@--font-size-base: 14px;
+/// fontSize|1|Font Size|0
+@--font-size-small: 13px;
+/// fontSize|1|Font Size|0
+@--font-size-extra-small: 12px;
+/// fontWeight|1|Font Weight|1
+@--font-weight-primary: 500;
+/// fontWeight|1|Font Weight|1
+@--font-weight-secondary: 100;
+/// fontLineHeight|1|Line Height|2
+@--font-line-height-primary: 24px;
+/// fontLineHeight|1|Line Height|2
+@--font-line-height-secondary: 16px;
+@--font-color-disabled-base: #bbb;
+
+/* Size
+-------------------------- */
+@--size-base: 14px;
+
+/* Disable base
+-------------------------- */
+@--disabled-fill-base: @--background-color-base;
+@--disabled-color-base: @--color-text-placeholder;
+@--disabled-border-base: @--border-color-light;
+
+/* Transition
+-------------------------- */
+@--all-transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+@--fade-transition: opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+@--fade-linear-transition: opacity 200ms linear;
+@--md-fade-transition: transform 300ms cubic-bezier(0.23, 1, 0.32, 1), opacity 300ms cubic-bezier(0.23, 1, 0.32, 1);
+@--border-transition-base: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+@--color-transition-base: color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+/* z-index
+-------------------------- */
+@--index-normal: 1;
+@--index-top: 1000;
+@--index-popper: 2000;
+
+/* box-shadow
+-------------------------- */
+@--box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+// boxShadow|1|Shadow|1
+@--box-shadow-dark: 0 2px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.12);
+/// boxShadow|1|Shadow|1
+@--box-shadow-light: 0 2px 12px 0 rgba(0, 0, 0, 0.1);

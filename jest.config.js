@@ -1,6 +1,6 @@
 module.exports = {
   preset: '@vue/cli-plugin-unit-jest',
-  moduleFileExtensions: ['js', 'jsx', 'json', 'vue', 'wav', 'md'], // 测试文件内可引用的外部文件后缀名
+  moduleFileExtensions: ['js', 'vue', 'jsx', 'json', 'wav', 'md'], // 测试文件内可引用的外部文件后缀名
   testMatch: [ // 指定要被测试的文件命名格式
     '**/(tests|__tests__)/**/(unit|integration)/**/*.spec.(js|jsx|ts|tsx)'
   ],

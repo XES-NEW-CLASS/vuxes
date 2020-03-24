@@ -30,6 +30,11 @@
       "desc": "基础",
       "children": [
         {
+          "desc": "Layout 布局",
+          "name": "layout",
+          "path": "layout"
+        },
+        {
           "desc": "Icon 图标",
           "name": "icon",
           "path": "icon"
@@ -72,12 +77,27 @@
       ]
     },
     {
+      "desc": "通知",
+      "children": [
+        {
+          "desc": "Loading加载",
+          "name": "loading",
+          "path": "loading"
+        }
+      ]
+    },
+    {
       "desc": "视图",
       "children": [
         {
           "desc": "Message 全局提示",
           "name": "message",
           "path": "message"
+        },
+        {
+          "desc": "Tooltip 文字提示",
+          "name": "tooltip",
+          "path": "tooltip"
         }
       ]
     },
